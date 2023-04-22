@@ -1,24 +1,6 @@
 <div class="col-auto px-0 shadow-lg" style="background-color: #353c4e;">
     <div id="sidebar" class="collapse collapse-horizontal show border-end">
         <div id="sidebar-nav" class="list-group border-0 rounded-0 text-sm-start min-vh-100">
-            <!-- <div class="container">
-                <div class="py-3 mb-3 row justify-content-center">
-                    <img src="https://doheny.org/wp-content/uploads/2019/03/placeholder-person.png" class="w-50 rounded-circle mb-3" alt="">
-                    @if(auth()->user()->is_verified == 1)
-                    <a href="#" class="text-white text-center fw-bold text-decoration-none">{{auth()->user()->first_name}} {{auth()->user()->last_name}} </span></a>
-                    @endif
-                    @if(auth()->user()->user_type == 0)
-                    <p class="text-center text-light small">Client</p>
-                    @endif
-                    @if(auth()->user()->user_type == 3)
-                    <p class="text-center text-light small">ROC.PH Talent</p>
-                    @endif
-                    @if(auth()->user()->user_type == 4)
-                    <p class="text-center text-light small">You are an admin</p>
-                    @endif
-                    <hr>
-                </div>
-            </div> -->
             <div class="d-grid">
                 <a class=" text-decoration-none text-light fw-bold text-center mt-5 mb-4" href="/welcome-user">System Control Panel</a>
             </div>
@@ -59,10 +41,6 @@
                     <button class="btn btn-light m-3 fw-bold text-secondary" type="submit"> Log out</button>
                 </div>
             </form>
-
-
         </div>
     </div>
 </div>
-
-<!-- class="sidebar-item list-group-item border-bottom-0 border-end-0 d-inline-block text-truncate" data-bs-parent="#sidebar" -->

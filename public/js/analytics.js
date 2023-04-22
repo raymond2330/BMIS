@@ -807,61 +807,62 @@ function renderIncomeClassHouseholds(
     });
 }
 
-function renderJobClassifications(arrayJobCategories, arrayJob)
-{
-    Highcharts.chart('job', {
+function renderJobClassifications(arrayJobCategories, arrayJob) {
+    Highcharts.chart("job", {
         chart: {
-            type: 'bar'
+            type: "bar",
         },
         title: {
-            text: 'Job Classification',
+            text: "Job Classification",
             style: {
-                "font-family": 'Roboto, sans-serif',
-                "color": "#353c4e",
-                "font-size": '1.2em'
-            }
+                "font-family": "Roboto, sans-serif",
+                color: "#353c4e",
+                "font-size": "1.2em",
+            },
         },
         xAxis: {
             categories: arrayJobCategories,
             title: {
-                text: null
+                text: null,
             },
             labels: {
                 style: {
-                    "font-family": 'Roboto, sans-serif',
-                    "color": "#353c4e",
-                    "font-size": '1.1em'
-                }
-            }
+                    "font-family": "Roboto, sans-serif",
+                    color: "#353c4e",
+                    "font-size": "1.1em",
+                },
+            },
         },
         yAxis: {
             min: 0,
             title: {
-                text: 'Job Classification',
-                align: 'high'
+                text: "Job Classification",
+                align: "high",
             },
             labels: {
-                overflow: 'justify',
+                overflow: "justify",
                 style: {
-                    "font-family": 'Roboto, sans-serif',
-                    "color": "#353c4e",
-                    "font-size": '1.1em'
-                }
+                    "font-family": "Roboto, sans-serif",
+                    color: "#353c4e",
+                    "font-size": "1.1em",
+                },
             },
-
         },
         tooltip: {
-            formatter: function() {
-                return this.point.category + '</b><br/>' +
-                    'Number of workers: ' + this.point.y;
+            formatter: function () {
+                return (
+                    this.point.category +
+                    "</b><br/>" +
+                    "Number of workers: " +
+                    this.point.y
+                );
             },
-            backgroundColor: '#414b62',
+            backgroundColor: "#414b62",
             style: {
-                color: '#fff',
-                "font-family": 'Roboto, sans-serif',
-                "font-size": '1.1em'
-
-            }
+                color: "#fff",
+                "font-family": "Roboto, sans-serif",
+                "font-size": "1.1em",
+            },
         },
         plotOptions: {
             bar: {
@@ -869,46 +870,617 @@ function renderJobClassifications(arrayJobCategories, arrayJob)
                     enabled: true,
                     color: "#414b62",
                     style: {
-                        "font-family": 'Roboto, sans-serif',
-                        "font-weight": 'normal'
-                    }
+                        "font-family": "Roboto, sans-serif",
+                        "font-weight": "normal",
+                    },
                 },
                 colorByPoint: true,
                 pointWidth: 20,
                 borderRadius: 1,
                 borderWidth: 2,
-                borderColor: '#deebf7',
-            }
-
+                borderColor: "#deebf7",
+            },
         },
         legend: {
-            layout: 'vertical',
-            align: 'right',
-            verticalAlign: 'top',
+            layout: "vertical",
+            align: "right",
+            verticalAlign: "top",
             x: -40,
             y: 80,
             /* floating: true, */
             borderWidth: 1,
-            backgroundColor: Highcharts.defaultOptions.legend.backgroundColor || '#FFFFFF',
-            shadow: true
+            backgroundColor:
+                Highcharts.defaultOptions.legend.backgroundColor || "#FFFFFF",
+            shadow: true,
         },
         credits: {
-            enabled: false
+            enabled: false,
         },
-        series: [{
-            name: '',
-            data: arrayJob
-        }],
-        colors: ['#08306b',
-            '#08519c',
-            '#2171b5',
-            '#4292c6',
-            '#6baed6',
-            '#9ecae1',
-            '#c6dbef',
-            '#deebf7',
-        ]
-
+        series: [
+            {
+                name: "",
+                data: arrayJob,
+            },
+        ],
+        colors: [
+            "#08306b",
+            "#08519c",
+            "#2171b5",
+            "#4292c6",
+            "#6baed6",
+            "#9ecae1",
+            "#c6dbef",
+            "#deebf7",
+        ],
+    });
+}
+function renderCivilStatus(civilStatusLabels, civilStatus) {
+    Highcharts.chart("civil_status", {
+        chart: {
+            type: "column",
+        },
+        title: {
+            text: "Civil Status of Residents",
+            style: {
+                "font-family": "Roboto, sans-serif",
+                color: "#353c4e",
+                "font-size": "1.2em",
+            },
+        },
+        subtitle: {},
+        xAxis: {
+            categories: civilStatusLabels,
+            crosshair: true,
+            labels: {
+                style: {
+                    "font-family": "Roboto, sans-serif",
+                    color: "#353c4e",
+                    "font-size": "1.1em",
+                },
+            },
+        },
+        yAxis: {
+            title: {
+                useHTML: true,
+                text: null,
+            },
+            labels: {
+                style: {
+                    "font-family": "Roboto, sans-serif",
+                    color: "#353c4e",
+                    "font-size": "1.1em",
+                },
+            },
+        },
+        tooltip: {
+            formatter: function () {
+                return (
+                    this.point.category +
+                    "</b><br/>" +
+                    "Number of residents: " +
+                    this.point.y
+                );
+            },
+            backgroundColor: "#414b62",
+            style: {
+                color: "#fff",
+                "font-family": "Roboto, sans-serif",
+            },
+        },
+        plotOptions: {
+            column: {
+                pointWidth: 100,
+                borderRadius: 1,
+                borderWidth: 3,
+                borderColor: "#deebf7",
+                colorByPoint: true,
+            },
+        },
+        series: [
+            {
+                name: "Civil Status",
+                data: civilStatus,
+            },
+        ],
+        legend: {
+            itemStyle: {
+                "font-family": "Roboto, sans-serif",
+                color: "#353c4e",
+                "font-size": "1.2em",
+                "font-weight": "normal",
+            },
+        },
+        colors: [
+            "#08306b",
+            "#08519c",
+            "#2171b5",
+            "#4292c6",
+            "#6baed6",
+            "#9ecae1",
+            "#c6dbef",
+            "#deebf7",
+        ],
+        credits: {
+            enabled: false,
+        },
     });
 }
 
+function renderNationality(filipinosPercentage, nonfilipinosPercentage) {
+    Highcharts.chart("nationality", {
+        chart: {
+            plotBackgroundColor: null,
+            plotBorderWidth: null,
+            plotShadow: false,
+            type: "pie",
+        },
+        title: {
+            text: "Nationality of Residents",
+            style: {
+                "font-family": "Roboto, sans-serif",
+                color: "#353c4e",
+                "font-size": "1.2em",
+            },
+        },
+        tooltip: {
+            pointFormat: "{series.name}: <b>{point.percentage:.1f}%</b>",
+            backgroundColor: "#414b62",
+            style: {
+                color: "#fff",
+                "font-family": "Roboto, sans-serif",
+            },
+        },
+        accessibility: {
+            point: {
+                valueSuffix: "%",
+            },
+        },
+        plotOptions: {
+            pie: {
+                allowPointSelect: true,
+                cursor: "pointer",
+                colors: ["#08306b", "#08519c", "#2171b5"],
+                dataLabels: {
+                    enabled: true,
+                    format: "{point.name}<br>{point.percentage:.1f} %",
+                    distance: -50,
+                    style: {
+                        color: "#fff",
+                        "font-family": "Roboto, sans-serif",
+                        "font-weight": "normal",
+                    },
+                    filter: {
+                        property: "percentage",
+                        operator: ">",
+                        value: 4,
+                    },
+                },
+            },
+        },
+        series: [
+            {
+                name: "Share",
+                data: [
+                    {
+                        name: "Filipino",
+                        y: filipinosPercentage,
+                    },
+                    {
+                        name: "Non-Filipinos",
+                        y: nonfilipinosPercentage,
+                    },
+                ],
+            },
+        ],
+        credits: {
+            enabled: false,
+        },
+    });
+}
+function renderReligion(catholicPercentage, incPercentage, othersPercentage) {
+    Highcharts.chart("religion", {
+        chart: {
+            plotBackgroundColor: null,
+            plotBorderWidth: null,
+            plotShadow: false,
+            type: "pie",
+        },
+        title: {
+            text: "Religion",
+            style: {
+                "font-family": "Roboto, sans-serif",
+                color: "#353c4e",
+                "font-size": "1.2em",
+            },
+        },
+        tooltip: {
+            pointFormat: "{series.name}: <b>{point.percentage:.1f}%</b>",
+            backgroundColor: "#414b62",
+            style: {
+                color: "#fff",
+                "font-family": "Roboto, sans-serif",
+            },
+        },
+        accessibility: {
+            point: {
+                valueSuffix: "%",
+            },
+        },
+        plotOptions: {
+            pie: {
+                allowPointSelect: true,
+                cursor: "pointer",
+                colors: ["#08306b", "#08519c", "#2171b5"],
+                dataLabels: {
+                    enabled: true,
+                    format: "{point.name}<br>{point.percentage:.1f} %",
+                    distance: -50,
+                    style: {
+                        color: "#fff",
+                        "font-family": "Roboto, sans-serif",
+                        "font-weight": "normal",
+                    },
+                    filter: {
+                        property: "percentage",
+                        operator: ">",
+                        value: 4,
+                    },
+                },
+            },
+        },
+        series: [
+            {
+                name: "Percentage of residents",
+                data: [
+                    {
+                        name: "Catholic",
+                        y: catholicPercentage,
+                    },
+                    {
+                        name: "INC",
+                        y: incPercentage,
+                    },
+                    {
+                        name: "Others",
+                        y: othersPercentage,
+                    },
+                ],
+            },
+        ],
+        credits: {
+            enabled: false,
+        },
+    });
+}
+function renderWasteManagement(
+    composting,
+    incineration,
+    recycled,
+    waste_others
+) {
+    Highcharts.chart("waste_management", {
+        chart: {
+            plotBackgroundColor: null,
+            plotBorderWidth: null,
+            plotShadow: false,
+            type: "pie",
+        },
+        title: {
+            text: "Waste Management",
+            style: {
+                "font-family": "Roboto, sans-serif",
+                color: "#353c4e",
+                "font-size": "1.2em",
+            },
+        },
+        tooltip: {
+            pointFormat: "{series.name}: <b>{point.percentage:.1f}%</b>",
+            backgroundColor: "#414b62",
+            style: {
+                color: "#fff",
+                "font-family": "Roboto, sans-serif",
+            },
+        },
+        accessibility: {
+            point: {
+                valueSuffix: "%",
+            },
+        },
+        plotOptions: {
+            pie: {
+                allowPointSelect: true,
+                cursor: "pointer",
+                colors: ["#08306b", "#08519c", "#2171b5", "#4292c6", "#6baed6"],
+                dataLabels: {
+                    enabled: true,
+                    format: "{point.name}<br>{point.percentage:.1f} %",
+                    distance: -50,
+                    style: {
+                        color: "#fff",
+                        "font-family": "Roboto, sans-serif",
+                        "font-weight": "normal",
+                    },
+                    filter: {
+                        property: "percentage",
+                        operator: ">",
+                        value: 4,
+                    },
+                },
+            },
+        },
+        series: [
+            {
+                name: "Percentage of households",
+                data: [
+                    {
+                        name: "Composting",
+                        y: composting,
+                    },
+                    {
+                        name: "Incineration",
+                        y: incineration,
+                    },
+                    {
+                        name: "Recycled",
+                        y: recycled,
+                    },
+                    {
+                        name: "Others",
+                        y: waste_others,
+                    },
+                ],
+            },
+        ],
+        credits: {
+            enabled: false,
+        },
+    });
+}
+function renderToiletFacility(pail, flushed, toilet_others, no_toilet) {
+    Highcharts.chart("toilet_facility", {
+        chart: {
+            plotBackgroundColor: null,
+            plotBorderWidth: null,
+            plotShadow: false,
+            type: "pie",
+        },
+        title: {
+            text: "Toilet Facility",
+            style: {
+                "font-family": "Roboto, sans-serif",
+                color: "#353c4e",
+                "font-size": "1.2em",
+            },
+        },
+        tooltip: {
+            pointFormat: "{series.name}: <b>{point.percentage:.1f}%</b>",
+            backgroundColor: "#414b62",
+            style: {
+                color: "#fff",
+                "font-family": "Roboto, sans-serif",
+            },
+        },
+        accessibility: {
+            point: {
+                valueSuffix: "%",
+            },
+        },
+        plotOptions: {
+            pie: {
+                allowPointSelect: true,
+                cursor: "pointer",
+                colors: ["#08306b", "#08519c", "#2171b5", "#4292c6", "#6baed6"],
+                dataLabels: {
+                    enabled: true,
+                    format: "{point.name}<br>{point.percentage:.1f} %",
+                    distance: -50,
+                    style: {
+                        color: "#fff",
+                        "font-family": "Roboto, sans-serif",
+                        "font-weight": "normal",
+                    },
+                    filter: {
+                        property: "percentage",
+                        operator: ">",
+                        value: 4,
+                    },
+                },
+            },
+        },
+        series: [
+            {
+                name: "Percentage of households",
+                data: [
+                    {
+                        name: "Pail type",
+                        y: pail,
+                    },
+                    {
+                        name: "Flushed",
+                        y: flushed,
+                    },
+                    {
+                        name: "Others",
+                        y: toilet_others,
+                    },
+                    {
+                        name: "No toilet facility",
+                        y: no_toilet,
+                    },
+                ],
+            },
+        ],
+        credits: {
+            enabled: false,
+        },
+    });
+}
+
+function renderDwellingType(concrete, semiconcrete, logwood, dwelling_others) {
+    Highcharts.chart("dwelling_type", {
+        chart: {
+            plotBackgroundColor: null,
+            plotBorderWidth: null,
+            plotShadow: false,
+            type: "pie",
+        },
+        title: {
+            text: "Type of Dwelling",
+            style: {
+                "font-family": "Roboto, sans-serif",
+                color: "#353c4e",
+                "font-size": "1.2em",
+            },
+        },
+        tooltip: {
+            pointFormat: "{series.name}: <b>{point.percentage:.1f}%</b>",
+            backgroundColor: "#414b62",
+            style: {
+                color: "#fff",
+                "font-family": "Roboto, sans-serif",
+            },
+        },
+        accessibility: {
+            point: {
+                valueSuffix: "%",
+            },
+        },
+        plotOptions: {
+            pie: {
+                allowPointSelect: true,
+                cursor: "pointer",
+                colors: ["#08306b", "#08519c", "#2171b5", "#4292c6", "#6baed6"],
+                dataLabels: {
+                    enabled: true,
+                    format: "{point.name}<br>{point.percentage:.1f} %",
+                    distance: -50,
+                    style: {
+                        color: "#fff",
+                        "font-family": "Roboto, sans-serif",
+                        "font-weight": "normal",
+                    },
+                    filter: {
+                        property: "percentage",
+                        operator: ">",
+                        value: 4,
+                    },
+                },
+            },
+        },
+        series: [
+            {
+                name: "Percentage of households",
+                data: [
+                    {
+                        name: "Concrete",
+                        y: concrete,
+                    },
+                    {
+                        name: "Semi-concrete",
+                        y: semiconcrete,
+                    },
+                    {
+                        name: "Log/Wood",
+                        y: logwood,
+                    },
+                    {
+                        name: "Others",
+                        y: dwelling_others,
+                    },
+                ],
+            },
+        ],
+        credits: {
+            enabled: false,
+        },
+    });
+}
+function renderOwnershipType(
+    rented,
+    owned,
+    sharedowner,
+    sharedrenter,
+    informalsettler
+) {
+    Highcharts.chart("ownership", {
+        chart: {
+            plotBackgroundColor: null,
+            plotBorderWidth: null,
+            plotShadow: false,
+            type: "pie",
+        },
+        title: {
+            text: "Type of Ownership",
+            style: {
+                "font-family": "Roboto, sans-serif",
+                color: "#353c4e",
+                "font-size": "1.2em",
+            },
+        },
+        tooltip: {
+            pointFormat: "{series.name}: <b>{point.percentage:.1f}%</b>",
+            backgroundColor: "#414b62",
+            style: {
+                color: "#fff",
+                "font-family": "Roboto, sans-serif",
+            },
+        },
+        accessibility: {
+            point: {
+                valueSuffix: "%",
+            },
+        },
+        plotOptions: {
+            pie: {
+                allowPointSelect: true,
+                cursor: "pointer",
+                colors: ["#08306b", "#08519c", "#2171b5", "#4292c6", "#6baed6"],
+                dataLabels: {
+                    enabled: true,
+                    format: "{point.name}<br>{point.percentage:.1f} %",
+                    distance: -50,
+                    style: {
+                        color: "#fff",
+                        "font-family": "Roboto, sans-serif",
+                        "font-weight": "normal",
+                    },
+                    filter: {
+                        property: "percentage",
+                        operator: ">",
+                        value: 4,
+                    },
+                },
+            },
+        },
+        series: [
+            {
+                name: "Percentage of households",
+                data: [
+                    {
+                        name: "Rented",
+                        y: rented,
+                    },
+                    {
+                        name: "Owned",
+                        y: owned,
+                    },
+                    {
+                        name: "Shared with owner",
+                        y: sharedowner,
+                    },
+                    {
+                        name: "Shared with renter",
+                        y: sharedrenter,
+                    },
+                    {
+                        name: "Informal settler",
+                        y: informalsettler,
+                    },
+                ],
+            },
+        ],
+        credits: {
+            enabled: false,
+        },
+    });
+}

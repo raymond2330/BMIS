@@ -609,44 +609,59 @@
 <script src="https://code.highcharts.com/modules/export-data.js"></script>
 <script src="https://code.highcharts.com/modules/accessibility.js"></script>
 <script src="{{ asset('js/analytics.js') }}"></script>
-
-
-
-
-
 {!! $form_chart->renderJs() !!}
-
-
 <script>
     $(document).ready(function() {
-        var streetNames = <?php echo json_encode($street_names); ?>;
-        var householdsPerStreet = <?php echo json_encode($household_per_street); ?>;
-        var familiesPerStreet = <?php echo json_encode($families_per_street); ?>;
-        var residentsPerStreet = <?php echo json_encode($residents_per_street); ?>;
-        var maleAgeArray = <?php echo json_encode($male_age_array); ?>;
-        var femaleAgeArray = <?php echo json_encode($female_age_array); ?>;
-        var malePercentage = <?php echo json_encode($male_percentage); ?>;
-        var femalePercentage = <?php echo json_encode($female_percentage); ?>;
-        var arrayEducationCategories = <?php echo json_encode($array_education_categories); ?>;
-        var arrayEducation = <?php echo json_encode($array_education); ?>;
-        var residentPoor = <?php echo json_encode($resident_poor) ?>;
-        var residentLow = <?php echo json_encode($resident_low_income) ?>;
-        var residentLowerMiddle = <?php echo json_encode($resident_lower_middle) ?>;
-        var residentMiddle = <?php echo json_encode($resident_middle) ?>;
-        var residentUpperMiddle = <?php echo json_encode($resident_upper_middle) ?>;
-        var residentHigh = <?php echo json_encode($resident_high_income) ?>;
-        var residentRich = <?php echo json_encode($resident_rich) ?>;
-        var householdPoor = <?php echo json_encode($household_poor) ?>;
-        var householdLow = <?php echo json_encode($household_low_income) ?>;
-        var householdLowerMiddle = <?php echo json_encode($household_lower_middle) ?>;
-        var householdMiddle = <?php echo json_encode($household_middle) ?>;
-        var householdUpperMiddle = <?php echo json_encode($household_upper_middle) ?>;
-        var householdHigh = <?php echo json_encode($household_high_income) ?>;
-        var householdRich = <?php echo json_encode($household_rich) ?>;
-        var arrayJobCategories = <?php echo json_encode($array_job_categories); ?>;
-        var arrayJob = <?php echo json_encode($array_job); ?>;
-
-
+        let streetNames = <?php echo json_encode($street_names); ?>;
+        let householdsPerStreet = <?php echo json_encode($household_per_street); ?>;
+        let familiesPerStreet = <?php echo json_encode($families_per_street); ?>;
+        let residentsPerStreet = <?php echo json_encode($residents_per_street); ?>;
+        let maleAgeArray = <?php echo json_encode($male_age_array); ?>;
+        let femaleAgeArray = <?php echo json_encode($female_age_array); ?>;
+        let malePercentage = <?php echo json_encode($male_percentage); ?>;
+        let femalePercentage = <?php echo json_encode($female_percentage); ?>;
+        let arrayEducationCategories = <?php echo json_encode($array_education_categories); ?>;
+        let arrayEducation = <?php echo json_encode($array_education); ?>;
+        let residentPoor = <?php echo json_encode($resident_poor) ?>;
+        let residentLow = <?php echo json_encode($resident_low_income) ?>;
+        let residentLowerMiddle = <?php echo json_encode($resident_lower_middle) ?>;
+        let residentMiddle = <?php echo json_encode($resident_middle) ?>;
+        let residentUpperMiddle = <?php echo json_encode($resident_upper_middle) ?>;
+        let residentHigh = <?php echo json_encode($resident_high_income) ?>;
+        let residentRich = <?php echo json_encode($resident_rich) ?>;
+        let householdPoor = <?php echo json_encode($household_poor) ?>;
+        let householdLow = <?php echo json_encode($household_low_income) ?>;
+        let householdLowerMiddle = <?php echo json_encode($household_lower_middle) ?>;
+        let householdMiddle = <?php echo json_encode($household_middle) ?>;
+        let householdUpperMiddle = <?php echo json_encode($household_upper_middle) ?>;
+        let householdHigh = <?php echo json_encode($household_high_income) ?>;
+        let householdRich = <?php echo json_encode($household_rich) ?>;
+        let arrayJobCategories = <?php echo json_encode($array_job_categories); ?>;
+        let arrayJob = <?php echo json_encode($array_job); ?>;
+        let civilStatusLabels = <?php echo json_encode($civil_status_labels); ?>;
+        let civilStatus = <?php echo json_encode($civil_status); ?>;
+        let filipinosPercentage = <?php echo json_encode($filipinos_percentage); ?>;
+        let nonfilipinosPercentage = <?php echo json_encode($non_filipinos_percentage); ?>;
+        let catholicPercentage = <?php echo json_encode($catholic_percentage); ?>;
+        let incPercentage = <?php echo json_encode($inc_percentage); ?>;
+        let othersPercentage = <?php echo json_encode($other_religion_percentage); ?>;
+        let composting = <?php echo json_encode($composting); ?>;
+        let incineration = <?php echo json_encode($incineration); ?>;
+        let recycled = <?php echo json_encode($recycled); ?>;
+        let waste_others = <?php echo json_encode($waste_others); ?>;
+        let pail = <?php echo json_encode($pail); ?>;
+        let flushed = <?php echo json_encode($flushed); ?>;
+        let toilet_others = <?php echo json_encode($toilet_others); ?>;
+        let no_toilet = <?php echo json_encode($no_toilet); ?>;
+        let concrete = <?php echo json_encode($concrete); ?>;
+        let semiconcrete = <?php echo json_encode($semiconcrete); ?>;
+        let logwood = <?php echo json_encode($logwood); ?>;
+        let dwelling_others = <?php echo json_encode($dwelling_others); ?>;
+        let rented = <?php echo json_encode($rented); ?>;
+        let owned = <?php echo json_encode($owned); ?>;
+        let sharedowner = <?php echo json_encode($sharedowner); ?>;
+        let sharedrenter = <?php echo json_encode($sharedrenter); ?>;
+        let informalsettler = <?php echo json_encode($informalsettler); ?>;
         renderHouseholdsPerStreet(streetNames, householdsPerStreet);
         renderFamiliesPerStreet(streetNames, familiesPerStreet);
         renderResidentsPerStreet(streetNames, residentsPerStreet);
@@ -656,580 +671,13 @@
         renderIncomeClassResidents(residentPoor, residentLow, residentLowerMiddle, residentMiddle, residentUpperMiddle, residentHigh, residentRich);
         renderIncomeClassHouseholds(householdPoor, householdLow, householdLowerMiddle, householdMiddle, householdUpperMiddle, householdHigh, householdRich);
         renderJobClassifications(arrayJobCategories, arrayJob);
+        renderCivilStatus(civilStatusLabels, civilStatus);
+        renderNationality(filipinosPercentage, nonfilipinosPercentage);
+        renderReligion(catholicPercentage, incPercentage, othersPercentage);
+        renderWasteManagement(composting, incineration, recycled, waste_others);
+        renderToiletFacility(pail, flushed, toilet_others, no_toilet);
+        renderDwellingType(concrete, semiconcrete, logwood, dwelling_others);
+        renderOwnershipType(rented, owned, sharedowner, sharedrenter, informalsettler);
     });
 </script>
-
-<script>
-    Highcharts.chart('civil_status', {
-        chart: {
-            type: 'column'
-        },
-        title: {
-            text: 'Civil Status of Residents',
-            style: {
-                "font-family": 'Roboto, sans-serif',
-                "color": "#353c4e",
-                "font-size": '1.2em'
-            }
-        },
-        subtitle: {
-
-        },
-        xAxis: {
-            categories: <?php echo json_encode($civil_status_labels); ?>,
-            crosshair: true,
-            labels: {
-                style: {
-                    "font-family": 'Roboto, sans-serif',
-                    "color": "#353c4e",
-                    "font-size": '1.1em'
-                }
-            },
-        },
-        yAxis: {
-            title: {
-                useHTML: true,
-                text: null
-
-            },
-            labels: {
-                style: {
-                    "font-family": 'Roboto, sans-serif',
-                    "color": "#353c4e",
-                    "font-size": '1.1em'
-                }
-            },
-        },
-        tooltip: {
-            formatter: function() {
-                return this.point.category + '</b><br/>' +
-                    'Number of residents: ' + this.point.y;
-            },
-            backgroundColor: '#414b62',
-            style: {
-                color: '#fff',
-                "font-family": 'Roboto, sans-serif',
-            }
-        },
-        plotOptions: {
-            column: {
-                pointWidth: 100,
-                borderRadius: 1,
-                borderWidth: 3,
-                borderColor: '#deebf7',
-                colorByPoint: true,
-            }
-        },
-        series: [{
-            name: "Civil Status",
-            data: <?php echo json_encode($civil_status); ?>
-        }],
-        legend: {
-            itemStyle: {
-                "font-family": 'Roboto, sans-serif',
-                "color": "#353c4e",
-                "font-size": '1.2em',
-                "font-weight": "normal"
-            }
-        },
-        colors: ['#08306b',
-            '#08519c',
-            '#2171b5',
-            '#4292c6',
-            '#6baed6',
-            '#9ecae1',
-            '#c6dbef',
-            '#deebf7',
-        ],
-        credits: {
-            enabled: false
-        },
-    });
-</script>
-
-
-
-<script>
-    Highcharts.chart('nationality', {
-        chart: {
-            plotBackgroundColor: null,
-            plotBorderWidth: null,
-            plotShadow: false,
-            type: 'pie'
-        },
-        title: {
-            text: 'Nationality of Residents',
-            style: {
-                "font-family": 'Roboto, sans-serif',
-                "color": "#353c4e",
-                "font-size": '1.2em'
-            }
-        },
-        tooltip: {
-            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>',
-            backgroundColor: '#414b62',
-            style: {
-                color: '#fff',
-                "font-family": 'Roboto, sans-serif',
-            }
-        },
-        accessibility: {
-            point: {
-                valueSuffix: '%'
-            }
-        },
-        plotOptions: {
-            pie: {
-                allowPointSelect: true,
-                cursor: 'pointer',
-                colors: ['#08306b',
-                    '#08519c',
-                    '#2171b5'
-                ],
-                dataLabels: {
-                    enabled: true,
-                    format: '{point.name}<br>{point.percentage:.1f} %',
-                    distance: -50,
-                    style: {
-                        color: '#fff',
-                        "font-family": 'Roboto, sans-serif',
-                        "font-weight": 'normal'
-                    },
-                    filter: {
-                        property: 'percentage',
-                        operator: '>',
-                        value: 4
-                    }
-                }
-            }
-        },
-        series: [{
-            name: 'Share',
-            data: [{
-                    name: 'Filipino',
-                    y: <?php echo json_encode($filipinos_percentage); ?>
-                },
-                {
-                    name: 'Non-Filipinos',
-                    y: <?php echo json_encode($non_filipinos_percentage); ?>
-                },
-            ]
-        }],
-        credits: {
-            enabled: false
-        },
-    });
-</script>
-
-
-
-<script>
-    Highcharts.chart('religion', {
-        chart: {
-            plotBackgroundColor: null,
-            plotBorderWidth: null,
-            plotShadow: false,
-            type: 'pie'
-        },
-        title: {
-            text: 'Religion',
-            style: {
-                "font-family": 'Roboto, sans-serif',
-                "color": "#353c4e",
-                "font-size": '1.2em'
-            }
-        },
-        tooltip: {
-            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>',
-            backgroundColor: '#414b62',
-            style: {
-                color: '#fff',
-                "font-family": 'Roboto, sans-serif',
-            }
-        },
-        accessibility: {
-            point: {
-                valueSuffix: '%'
-            }
-        },
-        plotOptions: {
-            pie: {
-                allowPointSelect: true,
-                cursor: 'pointer',
-                colors: ['#08306b',
-                    '#08519c',
-                    '#2171b5'
-                ],
-                dataLabels: {
-                    enabled: true,
-                    format: '{point.name}<br>{point.percentage:.1f} %',
-                    distance: -50,
-                    style: {
-                        color: '#fff',
-                        "font-family": 'Roboto, sans-serif',
-                        "font-weight": 'normal'
-                    },
-                    filter: {
-                        property: 'percentage',
-                        operator: '>',
-                        value: 4
-                    }
-                }
-            }
-        },
-        series: [{
-            name: 'Percentage of residents',
-            data: [{
-                    name: 'Catholic',
-                    y: <?php echo json_encode($catholic_percentage); ?>
-                },
-                {
-                    name: 'INC',
-                    y: <?php echo json_encode($inc_percentage); ?>
-                },
-                {
-                    name: 'Others',
-                    y: <?php echo json_encode($other_religion_percentage); ?>
-                },
-            ]
-        }],
-        credits: {
-            enabled: false
-        },
-    });
-</script>
-
-
-<script>
-    Highcharts.chart('waste_management', {
-        chart: {
-            plotBackgroundColor: null,
-            plotBorderWidth: null,
-            plotShadow: false,
-            type: 'pie'
-        },
-        title: {
-            text: 'Waste Management',
-            style: {
-                "font-family": 'Roboto, sans-serif',
-                "color": "#353c4e",
-                "font-size": '1.2em'
-            }
-        },
-        tooltip: {
-            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>',
-            backgroundColor: '#414b62',
-            style: {
-                color: '#fff',
-                "font-family": 'Roboto, sans-serif',
-            }
-        },
-        accessibility: {
-            point: {
-                valueSuffix: '%'
-            }
-        },
-        plotOptions: {
-            pie: {
-                allowPointSelect: true,
-                cursor: 'pointer',
-                colors: ['#08306b',
-                    '#08519c',
-                    '#2171b5',
-                    '#4292c6',
-                    '#6baed6',
-                ],
-                dataLabels: {
-                    enabled: true,
-                    format: '{point.name}<br>{point.percentage:.1f} %',
-                    distance: -50,
-                    style: {
-                        color: '#fff',
-                        "font-family": 'Roboto, sans-serif',
-                        "font-weight": 'normal'
-                    },
-                    filter: {
-                        property: 'percentage',
-                        operator: '>',
-                        value: 4
-                    }
-                }
-            }
-        },
-        series: [{
-            name: 'Percentage of households',
-            data: [{
-                    name: 'Composting',
-                    y: <?php echo json_encode($composting); ?>
-                },
-                {
-                    name: 'Incineration',
-                    y: <?php echo json_encode($incineration); ?>
-                },
-                {
-                    name: 'Recycled',
-                    y: <?php echo json_encode($recycled); ?>
-                },
-                {
-                    name: 'Others',
-                    y: <?php echo json_encode($waste_others); ?>
-                },
-            ]
-        }],
-        credits: {
-            enabled: false
-        },
-    });
-</script>
-
-<script>
-    Highcharts.chart('toilet_facility', {
-        chart: {
-            plotBackgroundColor: null,
-            plotBorderWidth: null,
-            plotShadow: false,
-            type: 'pie'
-        },
-        title: {
-            text: 'Toilet Facility',
-            style: {
-                "font-family": 'Roboto, sans-serif',
-                "color": "#353c4e",
-                "font-size": '1.2em'
-            }
-        },
-        tooltip: {
-            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>',
-            backgroundColor: '#414b62',
-            style: {
-                color: '#fff',
-                "font-family": 'Roboto, sans-serif',
-            }
-        },
-        accessibility: {
-            point: {
-                valueSuffix: '%'
-            }
-        },
-        plotOptions: {
-            pie: {
-                allowPointSelect: true,
-                cursor: 'pointer',
-                colors: ['#08306b',
-                    '#08519c',
-                    '#2171b5',
-                    '#4292c6',
-                    '#6baed6',
-                ],
-                dataLabels: {
-                    enabled: true,
-                    format: '{point.name}<br>{point.percentage:.1f} %',
-                    distance: -50,
-                    style: {
-                        color: '#fff',
-                        "font-family": 'Roboto, sans-serif',
-                        "font-weight": 'normal'
-                    },
-                    filter: {
-                        property: 'percentage',
-                        operator: '>',
-                        value: 4
-                    }
-                }
-            }
-        },
-        series: [{
-            name: 'Percentage of households',
-            data: [{
-                    name: 'Pail type',
-                    y: <?php echo json_encode($pail); ?>
-                },
-                {
-                    name: 'Flushed',
-                    y: <?php echo json_encode($flushed); ?>
-                },
-                {
-                    name: 'Others',
-                    y: <?php echo json_encode($toilet_others); ?>
-                },
-                {
-                    name: 'No toilet facility',
-                    y: <?php echo json_encode($no_toilet); ?>
-                },
-            ]
-        }],
-        credits: {
-            enabled: false
-        },
-    });
-</script>
-
-<script>
-    Highcharts.chart('dwelling_type', {
-        chart: {
-            plotBackgroundColor: null,
-            plotBorderWidth: null,
-            plotShadow: false,
-            type: 'pie'
-        },
-        title: {
-            text: 'Type of Dwelling',
-            style: {
-                "font-family": 'Roboto, sans-serif',
-                "color": "#353c4e",
-                "font-size": '1.2em'
-            }
-        },
-        tooltip: {
-            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>',
-            backgroundColor: '#414b62',
-            style: {
-                color: '#fff',
-                "font-family": 'Roboto, sans-serif',
-            }
-        },
-        accessibility: {
-            point: {
-                valueSuffix: '%'
-            }
-        },
-        plotOptions: {
-            pie: {
-                allowPointSelect: true,
-                cursor: 'pointer',
-                colors: ['#08306b',
-                    '#08519c',
-                    '#2171b5',
-                    '#4292c6',
-                    '#6baed6',
-                ],
-                dataLabels: {
-                    enabled: true,
-                    format: '{point.name}<br>{point.percentage:.1f} %',
-                    distance: -50,
-                    style: {
-                        color: '#fff',
-                        "font-family": 'Roboto, sans-serif',
-                        "font-weight": 'normal'
-                    },
-                    filter: {
-                        property: 'percentage',
-                        operator: '>',
-                        value: 4
-                    }
-                }
-            }
-        },
-        series: [{
-            name: 'Percentage of households',
-            data: [{
-                    name: 'Concrete',
-                    y: <?php echo json_encode($concrete); ?>
-                },
-                {
-                    name: 'Semi-concrete',
-                    y: <?php echo json_encode($semiconcrete); ?>
-                },
-                {
-                    name: 'Log/Wood',
-                    y: <?php echo json_encode($logwood); ?>
-                },
-                {
-                    name: 'Others',
-                    y: <?php echo json_encode($dwelling_others); ?>
-                },
-            ]
-        }],
-        credits: {
-            enabled: false
-        },
-    });
-</script>
-
-<script>
-    Highcharts.chart('ownership', {
-        chart: {
-            plotBackgroundColor: null,
-            plotBorderWidth: null,
-            plotShadow: false,
-            type: 'pie'
-        },
-        title: {
-            text: 'Type of Ownership',
-            style: {
-                "font-family": 'Roboto, sans-serif',
-                "color": "#353c4e",
-                "font-size": '1.2em'
-            }
-        },
-        tooltip: {
-            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>',
-            backgroundColor: '#414b62',
-            style: {
-                color: '#fff',
-                "font-family": 'Roboto, sans-serif',
-            }
-        },
-        accessibility: {
-            point: {
-                valueSuffix: '%'
-            }
-        },
-        plotOptions: {
-            pie: {
-                allowPointSelect: true,
-                cursor: 'pointer',
-                colors: ['#08306b',
-                    '#08519c',
-                    '#2171b5',
-                    '#4292c6',
-                    '#6baed6',
-                ],
-                dataLabels: {
-                    enabled: true,
-                    format: '{point.name}<br>{point.percentage:.1f} %',
-                    distance: -50,
-                    style: {
-                        color: '#fff',
-                        "font-family": 'Roboto, sans-serif',
-                        "font-weight": 'normal'
-                    },
-                    filter: {
-                        property: 'percentage',
-                        operator: '>',
-                        value: 4
-                    }
-                }
-            }
-        },
-        series: [{
-            name: 'Percentage of households',
-            data: [{
-                    name: 'Rented',
-                    y: <?php echo json_encode($rented); ?>
-                },
-                {
-                    name: 'Owned',
-                    y: <?php echo json_encode($owned); ?>
-                },
-                {
-                    name: 'Shared with owner',
-                    y: <?php echo json_encode($sharedowner); ?>
-                },
-                {
-                    name: 'Shared with renter',
-                    y: <?php echo json_encode($sharedrenter); ?>
-                },
-                {
-                    name: 'Informal settler',
-                    y: <?php echo json_encode($informalsettler); ?>
-                },
-            ]
-        }],
-        credits: {
-            enabled: false
-        },
-    });
-</script>
-
 @endsection

@@ -4,9 +4,6 @@
 <head>
     @include('includes.head')
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs5/dt-1.13.1/datatables.min.css" />
-
-
-
     <style>
         .pagination>li>a,
         .pagination>li>span {
@@ -56,7 +53,7 @@
     </style>
 </head>
 
-<body class="bg-light">
+<body style="background-color: #E8EAF6;">
 
     <header>
 
@@ -66,7 +63,7 @@
 
         <main class="col">
             <div class="py-1 mb-3 bg-white shadow-sm">
-                <a href="#" data-bs-target="#sidebar" data-bs-toggle="collapse" class="border-none rounded-3 fs-5 p-2 text-decoration-none text-dark"><i class="fa-solid fa-bars" style="margin: 1rem"></i></a>            
+                <a href="#" data-bs-target="#sidebar" data-bs-toggle="collapse" class="border-none rounded-3 fs-5 p-2 text-decoration-none text-dark"><i class="fa-solid fa-bars" style="margin: 1rem"></i></a>
             </div>
             <div class="m-3">
                 @yield('content')
@@ -75,82 +72,11 @@
 
     </div>
 
-    <!-- <div class="wrapper">
-        <nav id="sidebar">
-            <ul class="list-unstyled components">
-                <div class="container">
-                 
-                    <div class="d-grid">
-                        <a class=" text-decoration-none text-light fw-bold text-center mt-2 mb-4" href="/welcome-user">System Control Panel</a>
-                    </div>
-
-                    <span class="mt-2 text-secondary text-uppercase fw-bold" style="font-size:11px">Official Website</span>
-                    <li><a class="text-decoration-none" href="/"><i class="ms-2 fa-solid fa-house me-2"></i>Barangay 385 Home</a></li>
-
-                    @if(Auth::user()->user_type == 0)
-                    <span class="mt-2 text-secondary text-uppercase fw-bold" style="font-size:11px">User Management</span>
-                    <li><a class="text-decoration-none {{ (request()->is('users/*')) ? 'active-link' : '' }}" href="/users/index"><i class="ms-2 fa-solid fa-users me-2"></i>System Users</a></li>
-                    <span class="mt-2 text-secondary text-uppercase fw-bold" style="font-size:11px">Database Summary</span>
-                    <li class="{{ (request()->is('dashboard')) ? 'active-link' : '' }}"><a class="text-decoration-none" href="/dashboard"><i class="ms-2 fa-solid fa-chart-line me-2"></i>Dashboard</a></li>
-                    @endif
-
-
-                    @if(Auth::user()->user_type == 2 || Auth::user()->user_type == 0)
-                    <span class="mt-2 text-secondary text-uppercase fw-bold" style="font-size:11px">Edit the Barangay Home page</span>
-                    <div class="mt-1">
-                        <li class="{{ (request()->is('links/*')) ? 'active-link' : '' }}"><a class="text-decoration-none" href="/links/index"><i class="ms-2 fa-solid fa-link me-2"></i>Quick Links</a></li>
-                        <li class="{{ (request()->is('videos/*')) ? 'active-link' : '' }}"><a class="text-decoration-none" href="/videos/index"><i class="ms-2 fa-brands fa-youtube me-2"></i>Featured Videos</a></li>
-                        <li class="{{ (request()->is('announcements/*')) ? 'active-link' : '' }}"><a class="text-decoration-none" href="/announcements/index"><i class="ms-2 fa-solid fa-bullhorn me-2"></i>Announcements</a></li>
-                    </div>
-                    @endif
-
-                    @if(Auth::user()->user_type == 1 || Auth::user()->user_type == 0)
-                    <span class="mt-2 text-secondary text-uppercase fw-bold" style="font-size:11px">Local Statistics</span>
-                    <li class="{{ (request()->is('streets/*')) ? 'active-link' : '' }}"><a class="text-decoration-none" href="/streets/index"><i class="ms-2 fa-solid fa-house-user me-2"></i>Household Profiling</a></li>
-                    <span class="mt-2 text-secondary text-uppercase fw-bold" style="font-size:11px">Tables</span>
-                    <li class="{{ (request()->is('households_list')) ? 'active-link' : '' }}"><a class="text-decoration-none" href="/households_list"><i class="ms-2 fa-solid fa-house-circle-check me-2"></i>Households</a></li>
-                    <li class="{{ (request()->is('residents/*')) ? 'active-link' : '' }}"><a class="text-decoration-none" href="/residents/index"><i class="ms-2 fa-solid fa-users-line me-2"></i>Residents</a></li>
-                    @if(Auth::user()->user_type == 0)
-                    <li class="{{ (request()->is('archive/residents')) ? 'active-link' : '' }}"><a class="text-decoration-none" href="/archive/residents"><i class="ms-2 fa-solid fa-box-archive me-2"></i>Archives</a></li>
-                    @endif
-                    @endif
-
-
-                    @if(Auth::user()->user_type == 3 || Auth::user()->user_type == 0)
-                    <span class="mt-2 text-secondary text-uppercase fw-bold" style="font-size:11px">Forms</span>
-                    <li class="{{ (request()->is('certificates/index')) ? 'active-link' : '' }}"><a class="text-decoration-none" href="/certificates/index"><i class="ms-2 fa-solid fa-print me-2"></i>Form Logs</a></li>
-                    <li class="{{ (request()->is('forms')) || (request()->is('forms/*')) ? 'active-link' : '' }}"><a class="text-decoration-none" href="/forms"><i class="ms-2 fa-solid fa-file-signature me-2"></i>Generate Forms</a></li>
-                    @endif
-
-                    @if(Auth::user()->user_type == 0 )
-
-                    @endif
-                    <span class="mt-2 text-secondary text-uppercase fw-bold" style="font-size:11px">Help</span>
-                    <li class="{{ (request()->is('welcome-user')) ? 'active-link' : '' }}"><a class="text-decoration-none" href="/welcome-user"><i class="ms-2 fa-solid fa-clipboard-question me-2"></i>User Manual</a></li>
-
-                    <form method="POST" action="{{ route('logout') }}">
-                        @csrf
-                        <div class="d-grid">
-                            <button class="btn btn-light admin-card-text mt-4" type="submit"> Log out</button>
-                        </div>
-                    </form>
-
-
-                </div>
-            </ul>
-
-        </nav> -->
-
-
-
     <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous"></script>
     <script src="https://cdn.tiny.cloud/1/kogos4e3i28a6tb2dnuq31kw6wnycc1tc6pbredig4ew514h/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
     <!-- Development -->
-    <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
-    <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
 
 
     <script src="//cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
@@ -164,29 +90,10 @@
 
     <script type="text/javascript">
         $(document).ready(function() {
-            // $("#sidebar").mCustomScrollbar({
-            //     theme: "minimal"
-            // });
 
-            // $('#sidebarCollapse').on('click', function() {
-            //     $('#sidebar, #content').toggleClass('active');
-            //     $('.collapse.in').toggleClass('in');
-            //     $('a[aria-expanded=true]').attr('aria-expanded', 'false');
-            // });
             const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
             const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
 
-            function addShowClass() {
-                const screenWidth = window.innerWidth;
-                const divElement = document.getElementById("sidebar");
-
-                if (screenWidth > 720) {
-                    divElement.classList.add("show");
-                } else {
-                    divElement.classList.remove("show");
-                }
-            }
-            window.addEventListener("resize", addShowClass);
 
         });
     </script>
@@ -914,17 +821,6 @@
 
             content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
         });
-        // tinymce.init({
-        //     selector: '#announcement',
-        //     plugins: 'charmap wordcount lists image imagetools searchreplace ',
-        //     toolbar: 'searchreplace charmap wordcount hr | image | advlist bullist numlist ',
-        //     toolbar_mode: 'floating',
-        // });
-        // tinymce.init({
-        //     selector: '#announcement',
-        // plugins: 'image autolink lists media table advimage',
-        //     toolbar: 'wordcount'
-        // });
     </script>
     <script>
         $(document).ready(function() {
@@ -946,11 +842,22 @@
 
         });
     </script>
+    <script>
+        function addShowClass() {
+            const screenWidth = window.innerWidth;
+            const divElement = document.getElementById("sidebar");
+
+            if (screenWidth > 720) {
+                divElement.classList.add("show");
+            } else {
+                divElement.classList.remove("show");
+            }
+        }
+        window.addEventListener("resize", addShowClass);
+    </script>
 
 
 
 </body>
 
 </html>
-<!-- plugins: 'a11ychecker advcode casechange export formatpainter image editimage linkchecker autolink lists checklist media mediaembed pageembed permanentpen powerpaste table advtable tinymcespellchecker advimage',
-toolbar: 'a11ycheck addcomment showcomments casechange checklist code export formatpainter image editimage pageembed permanentpen table numlist bullist', -->
