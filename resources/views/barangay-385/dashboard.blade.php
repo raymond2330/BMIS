@@ -62,102 +62,102 @@
 
     </div> -->
     <div class="tab-pane fade show active" id="generalinfo-tab-pane" role="tabpanel" aria-labelledby="generalinfo-tab" tabindex="0">
-        <h5 class="mt-3 mb-4">General Household and Resident Information</h3>
-            <div id="general_information">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-sm-4 mb-3">
-                            <div class="card shadow-sm py-2 db-card border-white" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="bottom" data-bs-title="Total number of households">
-                                <div class="card-body">
-                                    <p class="admin-card-text">Households<i class="float-end fa-solid fa-house fa-2x" style="color: #414b62;"></i></p>
-                                    <h4 class="card-title fw-bold" style="color: #414b62;">{{$household_count}}</h4>
-                                    <a href="{{route('households.list')}}" class="text-secondary">View</a>
-                                </div>
+        <h5 class="mt-3 mb-4">General Household and Resident Information</h5>
+        <div id="general_information">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-4 mb-3">
+                        <div class="card shadow-sm py-2 db-card border-white" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="bottom" data-bs-title="Total number of households">
+                            <div class="card-body">
+                                <p class="admin-card-text">Households<i class="float-end fa-solid fa-house fa-2x" style="color: #414b62;"></i></p>
+                                <h4 class="card-title fw-bold" style="color: #414b62;">{{$household_count}}</h4>
+                                <a href="{{route('households.list')}}" class="text-secondary">View</a>
                             </div>
                         </div>
-                        <div class="col-sm-4 mb-3">
-                            <div class="card shadow-sm py-2 db-card" id="tooltip-2" style="background-color:#414b62" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="bottom" data-bs-title="Total number of population in the barangay">
-                                <div class="card-body">
-                                    <p class="admin-card-text" style="color: #f6f6f6;">Total Population<i class="float-end fa-solid fa-users-line fa-2x" style="color: #f6f6f6;"></i></p>
-                                    <h4 class="card-title fw-bold text-white">{{$resident_count}} </h4>
-                                    <a href="{{route('residents.index')}}" class="text-secondary">View</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-4 mb-3">
-                            <div class="card shadow-sm py-2 db-card border-white" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="bottom" data-bs-title="Total number of families. It is indicative of how many are the household heads">
-                                <div class="card-body">
-                                    <p class="admin-card-text">Families <i class="float-end fa-solid fa-people-group fa-2x" style="color: #414b62;"></i></p>
-                                    <h4 class="card-title fw-bold" style="color:#414b62;">{{$families}} </h4>
-                                    <a href="#" class="invisible">View</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-4 mb-3">
-                            <div class="card shadow-sm py-2 db-card border-white" id="tooltip-2" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="bottom" data-bs-title="Number of residents that are born in this barangay">
-                                <div class="card-body">
-                                    <p class="admin-card-text">Bona fide residents<i class="float-end fa-solid fa-user-check fa-2x" style="color: #414b62;"></i></p>
-                                    <h4 class="card-title fw-bold" style="color: #414b62;">{{$bona_fide}} </h4>
-                                    <a href="{{route('bonafide')}}" class="text-secondary">View</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-4 mb-3">
-                            <div class="card shadow-sm py-2 db-card border-white" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="bottom" data-bs-title="Total number of registered voters">
-                                <div class="card-body">
-                                    <p class="admin-card-text">Registered Voters <i class="float-end fa-solid fa-check-to-slot fa-2x" style="color: #414b62;"></i></p>
-                                    <h4 class="card-title fw-bold" style="color:#414b62;">{{$voters}} </h4>
-                                    <a href="{{route('voters')}}" class="text-secondary">View</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-4 mb-3">
-                            <div class="card shadow-sm py-2 db-card border-white" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="bottom" data-bs-title="Total number of person aged 60 and above">
-                                <div class="card-body">
-                                    <p class="admin-card-text">Senior Citizens <i class="float-end fa-solid fa-person-cane fa-2x" style="color: #414b62;"></i></p>
-                                    <h4 class="card-title fw-bold" style="color:#414b62;">{{$senior_citizens}} </h4>
-                                    <a href="{{route('seniors')}}" class="text-secondary">View</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-12 mb-3">
-                            <div class="card border-white shadow-sm db-card" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="bottom" data-bs-title="Total number of households per street">
-                                <div class="card-body">
-                                    <div class="container-fluid">
-                                        <figure class="highcharts-figure">
-                                            <div id="household_per_street"> </div>
-                                        </figure>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-12 mb-3">
-                            <div class="card border-white shadow-sm db-card" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="bottom" data-bs-title="Total number of households per street">
-                                <div class="card-body">
-                                    <div class="container-fluid">
-                                        <figure class="highcharts-figure">
-                                            <div id="families_per_street"> </div>
-                                        </figure>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-12 mb-3">
-                            <div class="card border-white shadow-sm db-card" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="bottom" data-bs-title="Total number of households per street">
-                                <div class="card-body">
-                                    <div class="container-fluid">
-                                        <figure class="highcharts-figure">
-                                            <div id="residents_per_street"> </div>
-                                        </figure>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
                     </div>
+                    <div class="col-sm-4 mb-3">
+                        <div class="card shadow-sm py-2 db-card" id="tooltip-2" style="background-color:#414b62" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="bottom" data-bs-title="Total number of population in the barangay">
+                            <div class="card-body">
+                                <p class="admin-card-text" style="color: #f6f6f6;">Total Population<i class="float-end fa-solid fa-users-line fa-2x" style="color: #f6f6f6;"></i></p>
+                                <h4 class="card-title fw-bold text-white">{{$resident_count}} </h4>
+                                <a href="{{route('residents.index')}}" class="text-secondary">View</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 mb-3">
+                        <div class="card shadow-sm py-2 db-card border-white" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="bottom" data-bs-title="Total number of families. It is indicative of how many are the household heads">
+                            <div class="card-body">
+                                <p class="admin-card-text">Families <i class="float-end fa-solid fa-people-group fa-2x" style="color: #414b62;"></i></p>
+                                <h4 class="card-title fw-bold" style="color:#414b62;">{{$families}} </h4>
+                                <a href="#" class="invisible">View</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 mb-3">
+                        <div class="card shadow-sm py-2 db-card border-white" id="tooltip-2" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="bottom" data-bs-title="Number of residents that are born in this barangay">
+                            <div class="card-body">
+                                <p class="admin-card-text">Bona fide residents<i class="float-end fa-solid fa-user-check fa-2x" style="color: #414b62;"></i></p>
+                                <h4 class="card-title fw-bold" style="color: #414b62;">{{$bona_fide}} </h4>
+                                <a href="{{route('bonafide')}}" class="text-secondary">View</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4 mb-3">
+                        <div class="card shadow-sm py-2 db-card border-white" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="bottom" data-bs-title="Total number of registered voters">
+                            <div class="card-body">
+                                <p class="admin-card-text">Registered Voters <i class="float-end fa-solid fa-check-to-slot fa-2x" style="color: #414b62;"></i></p>
+                                <h4 class="card-title fw-bold" style="color:#414b62;">{{$voters}} </h4>
+                                <a href="{{route('voters')}}" class="text-secondary">View</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 mb-3">
+                        <div class="card shadow-sm py-2 db-card border-white" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="bottom" data-bs-title="Total number of person aged 60 and above">
+                            <div class="card-body">
+                                <p class="admin-card-text">Senior Citizens <i class="float-end fa-solid fa-person-cane fa-2x" style="color: #414b62;"></i></p>
+                                <h4 class="card-title fw-bold" style="color:#414b62;">{{$senior_citizens}} </h4>
+                                <a href="{{route('seniors')}}" class="text-secondary">View</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 mb-3">
+                        <div class="card border-white shadow-sm db-card" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="bottom" data-bs-title="Total number of households per street">
+                            <div class="card-body">
+                                <div class="container-fluid">
+                                    <figure class="highcharts-figure">
+                                        <div id="household_per_street"> </div>
+                                    </figure>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 mb-3">
+                        <div class="card border-white shadow-sm db-card" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="bottom" data-bs-title="Total number of families per street">
+                            <div class="card-body">
+                                <div class="container-fluid">
+                                    <figure class="highcharts-figure">
+                                        <div id="families_per_street"> </div>
+                                    </figure>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 mb-3">
+                        <div class="card border-white shadow-sm db-card" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="bottom" data-bs-title="Total number of residents per street">
+                            <div class="card-body">
+                                <div class="container-fluid">
+                                    <figure class="highcharts-figure">
+                                        <div id="residents_per_street"> </div>
+                                    </figure>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
+        </div>
     </div>
     <div class="tab-pane fade" id="others-tab-pane" role="tabpanel" aria-labelledby="others-tab" tabindex="0">
         <h5 class="mt-3 mb-4">Other Household Information</h5>
@@ -222,7 +222,7 @@
     </div>
     <div class="tab-pane fade" id="genderage-tab-pane" role="tabpanel" aria-labelledby="genderage-tab" tabindex="0">
 
-        <h5 class="mt-3 mb-4">Gender and Age Distribution</h3>
+        <h5 class="mt-3 mb-4">Gender and Age Distribution</h4>
             <div id="gender_age_distribution">
                 <div class="container-fluid">
                     <div class="row">
@@ -355,235 +355,187 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- <div class="card border-white shadow-sm db-card" id="tooltip-8" style="background-color:#414b62;" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="bottom" data-bs-title="Gender distribution in specified age range">
-                                <div class="card-body">
-                                    <div class="container-fluid">
 
-                                        <div class="row justify-content-center text-center">
-                                            <div class="col-sm-3 mb-3">
-                                                <i class="fa-solid fa-baby fa-5x" style="color:#f6f6f6"></i>
-                                                <span class="fw-bold text-white" style="font-size:2.5rem;">{{$infants_percentage}}%</span>
-                                                <p class="mt-1 admin-card-text me-3 text-center" style="color:#f6f6f6">Infants</p>
-                                            </div>
-                                            <div class="col-sm-3 mb-3">
-                                                <i class="fa-solid fa-children fa-5x" style="color:#f6f6f6"></i>
-                                                <span class="fw-bold text-white" style="font-size:2.5rem;">{{$children_percentage}}%</span>
-                                                <p class="mt-1 admin-card-text me-3 text-center" style="color:#f6f6f6">Children</p>
-                                            </div>
-                                            <div class="col-sm-3 mb-3">
-                                                <i class="fa-solid fa-user-tie fa-5x" style="color:#f6f6f6"></i>
-                                                <span class="fw-bold text-white" style="font-size:2.5rem;">{{$adults_percentage}}%</span>
-                                                <p class="mt-1 admin-card-text me-3 text-center" style="color:#f6f6f6">Adults</p>
-                                            </div>
-                                            <div class="col-sm-3 mb-3">
-                                                <i class="fa-solid fa-person-cane fa-5x" style="color:#f6f6f6"></i>
-                                                <span class="fw-bold text-white" style="font-size:2.5rem;">{{$elderly_percentage}}%</span>
-                                                <p class="mt-1 admin-card-text me-3 text-center" style="color:#f6f6f6">Elderly</p>
-                                            </div>
-                                            <hr style="height:0px; border:none; border-top:5px solid #f6f6f6;" class="mb-3">
-                                            <div class="row mt-5 mb-2 text-start">
-                                                <div class="col-sm-4 mb-2">
-                                                    <i class="fa-solid fa-person" style="color:#3d8af7; font-size:14rem"></i>
-                                                    <i class="fa-solid fa-person-dress" style="color:#f06e9c; font-size:14rem"></i>
-                                                </div>
-                                                <div class="col-sm-4 mb-2">
-                                                    <h4 class="" style="color:#f6f6f6;">Infants (Less than 1yr)</h4>
-                                                    <h4 class="fw-bold mb-5" style="color:#f6f6f6;"><span style="color:#3d8af7">{{$infants_male}}</span> & <span style="color:#f06e9c">{{$infants_female}}</span></h4>
-                                                    <h4 class="" style="color:#f6f6f6;">Adults (18 - 59yrs)</h4>
-                                                    <h4 class="fw-bold mb-5" style="color:#f6f6f6;"><span style="color:#3d8af7">{{$adults_male}}</span> & <span style="color:#f06e9c">{{$adults_female}}</span></h4>
-                                                </div>
-                                                <div class="col-sm-4 mb-2">
-                                                    <h4 class="" style="color:#f6f6f6;">Children (1 - 17yrs)</h4>
-                                                    <h4 class="fw-bold mb-5" style="color:#f6f6f6;"><span style="color:#3d8af7">{{$children_male}}</span> & <span style="color:#f06e9c">{{$children_female}}</span></h4>
-                                                    <h4 class="" style="color:#f6f6f6;">Seniors (60+yrs)</h4>
-                                                    <h4 class="fw-bold mb-5" style="color:#f6f6f6;"><span style="color:#3d8af7">{{$elderly_male}}</span> & <span style="color:#f06e9c">{{$elderly_female}}</span></h4>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> -->
                     </div>
                 </div>
             </div>
     </div>
     <div class="tab-pane fade" id="education-tab-pane" role="tabpanel" aria-labelledby="education-tab" tabindex="0">
 
-        <h5 class="mt-3 mb-4">Educational Attainment</h3>
-            <div id="educational_attainment">
-                <div class="container-fluid">
-                    <div class="row mb-5">
-                        <div class="col-sm-9 mb-3">
-                            <div class="card border-white shadow-sm db-card" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="bottom" data-bs-title="Bar chart for educational attainment of residents">
-                                <div class="card-body">
-                                    <div class="container-fluid">
-                                        <figure class="highcharts-figure">
-                                            <div id="education_attainment"> </div>
-                                        </figure>
-                                    </div>
+        <h5 class="mt-3 mb-4">Educational Attainment</h5>
+        <div id="educational_attainment">
+            <div class="container-fluid">
+                <div class="row mb-5">
+                    <div class="col-sm-9 mb-3">
+                        <div class="card border-white shadow-sm db-card" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="bottom" data-bs-title="Bar chart for educational attainment of residents">
+                            <div class="card-body">
+                                <div class="container-fluid">
+                                    <figure class="highcharts-figure">
+                                        <div id="education_attainment"> </div>
+                                    </figure>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-3 mb-3">
-                            <div class="row">
-                                <div class="col-sm-12 mb-3">
-                                    <div class="card shadow-sm db-card border-white " style="background-color:#414b62" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="bottom" data-bs-title="Total number of residents that are currently studying">
-                                        <div class="card-body">
-                                            <p class="admin-card-text" style="color: #f6f6f6;">In school<i class="float-end fa-solid fa-chalkboard-user fa-2x" style="color: #f6f6f6;"></i></p>
-                                            <h4 class="card-title fw-bold text-white">{{$in_school}}</h4>
-                                            <a href="{{route('inschools')}}" class="text-secondary">View</a>
-                                        </div>
+                    </div>
+                    <div class="col-sm-3 mb-3">
+                        <div class="row">
+                            <div class="col-sm-12 mb-3">
+                                <div class="card shadow-sm db-card border-white " style="background-color:#414b62" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="bottom" data-bs-title="Total number of residents that are currently studying">
+                                    <div class="card-body">
+                                        <p class="admin-card-text" style="color: #f6f6f6;">In school<i class="float-end fa-solid fa-chalkboard-user fa-2x" style="color: #f6f6f6;"></i></p>
+                                        <h4 class="card-title fw-bold text-white">{{$in_school}}</h4>
+                                        <a href="{{route('inschools')}}" class="text-secondary">View</a>
                                     </div>
                                 </div>
-                                <div class="col-sm-12 mb-3">
-                                    <div class="card shadow-sm db-card border-white" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="bottom" data-bs-title="Total number of out of school youths">
-                                        <div class="card-body">
-                                            <p class="admin-card-text">Out of school youths<i class="float-end fa-solid fa-school-circle-xmark fa-2x" style="color: #414b62;"></i></p>
-                                            <h4 class="card-title fw-bold" style="color: #414b62;">{{$outofschoolyouth}}</h4>
-                                            <a href="{{route('outofschools')}}" class="text-secondary">View</a>
-                                        </div>
+                            </div>
+                            <div class="col-sm-12 mb-3">
+                                <div class="card shadow-sm db-card border-white" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="bottom" data-bs-title="Total number of out of school youths">
+                                    <div class="card-body">
+                                        <p class="admin-card-text">Out of school youths<i class="float-end fa-solid fa-school-circle-xmark fa-2x" style="color: #414b62;"></i></p>
+                                        <h4 class="card-title fw-bold" style="color: #414b62;">{{$outofschoolyouth}}</h4>
+                                        <a href="{{route('outofschools')}}" class="text-secondary">View</a>
                                     </div>
                                 </div>
-                                <div class="col-sm-12 mb-3">
+                            </div>
+                            <div class="col-sm-12 mb-3">
 
-                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
     </div>
     <div class="tab-pane fade" id="income-tab-pane" role="tabpanel" aria-labelledby="income-tab" tabindex="0">
 
-        <h5 class="mt-3 mb-4">Income Classes and Job Classifications</h3>
-            <div id="income_classes">
-                <div class="container-fluid">
-                    <div class="row mb-5">
-                        <div class="col-sm-4 mb-3">
-                            <div class="card border-white shadow-sm db-card" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="bottom" data-bs-title="Pie chart income classification of residents">
-                                <div class="card-body">
-                                    <div class="container-fluid">
-                                        <figure class="highcharts-figure">
-                                            <div id="resident_incomes"></div>
-                                            <p class="highcharts-description">
-                                            </p>
-                                        </figure>
+        <h5 class="mt-3 mb-4">Income Classes and Job Classifications</h5>
+        <div id="income_classes">
+            <div class="container-fluid">
+                <div class="row mb-5">
+                    <div class="col-sm-4 mb-3">
+                        <div class="card border-white shadow-sm db-card" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="bottom" data-bs-title="Pie chart income classification of residents">
+                            <div class="card-body">
+                                <div class="container-fluid">
+                                    <figure class="highcharts-figure">
+                                        <div id="resident_incomes"></div>
+                                        <p class="highcharts-description">
+                                        </p>
+                                    </figure>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 mb-3">
+                        <div class="card border-white shadow-sm db-card" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="bottom" data-bs-title="Pie chart income classification by households">
+                            <div class="card-body">
+                                <div class="container-fluid">
+                                    <figure class="highcharts-figure">
+                                        <div id="household_incomes"></div>
+                                        <p class="highcharts-description">
+                                        </p>
+                                    </figure>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 mb-3">
+                        <div class="row">
+                            <div class="col-sm-12 mb-3">
+                                <div class="card shadow-sm py-2 db-card" style="background-color:#414b62" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="bottom" data-bs-title="Total number of employed residents">
+                                    <div class="card-body">
+                                        <p class="admin-card-text" style="color: #f6f6f6;">Employed<i class="float-end fa-solid fa-id-card fa-2x" style="color: #f6f6f6;"></i></p>
+                                        <h4 class="card-title fw-bold text-white">{{$employed}} </h4>
+                                        <a href="{{route('employed')}}" class="text-secondary">View</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 mb-3">
+                                <div class="card shadow-sm py-2 db-card border-white" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="bottom" data-bs-title="Total number of unemployed residents">
+                                    <div class="card-body">
+                                        <p class="admin-card-text">Unemployed<i class="float-end fa-solid fa-user-xmark fa-2x" style="color: #414b62;"></i></p>
+                                        <h4 class="card-title fw-bold" style="color:#414b62;">{{$unemployed}} </h4>
+                                        <a href="{{route('unemployed')}}" class="text-secondary">View</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 mb-3">
+                                <div class="card shadow-sm py-2 db-card border-white" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="bottom" data-bs-title="Average income of residents">
+                                    <div class="card-body">
+                                        <p class="admin-card-text">Average Income of Residents<i class="float-end fa-solid fa-money-bills fa-2x" style="color: #414b62;"></i></p>
+                                        <h4 class="card-title fw-bold" style="color:#414b62;">Php {{$average_income}} </h4>
+                                        <a href="" class="invisible text-secondary">View</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-4 mb-3">
-                            <div class="card border-white shadow-sm db-card" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="bottom" data-bs-title="Pie chart income classification by households">
-                                <div class="card-body">
-                                    <div class="container-fluid">
-                                        <figure class="highcharts-figure">
-                                            <div id="household_incomes"></div>
-                                            <p class="highcharts-description">
-                                            </p>
-                                        </figure>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-4 mb-3">
-                            <div class="row">
-                                <div class="col-sm-12 mb-3">
-                                    <div class="card shadow-sm py-2 db-card" style="background-color:#414b62" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="bottom" data-bs-title="Total number of employed residents">
-                                        <div class="card-body">
-                                            <p class="admin-card-text" style="color: #f6f6f6;">Employed<i class="float-end fa-solid fa-id-card fa-2x" style="color: #f6f6f6;"></i></p>
-                                            <h4 class="card-title fw-bold text-white">{{$employed}} </h4>
-                                            <a href="{{route('employed')}}" class="text-secondary">View</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-12 mb-3">
-                                    <div class="card shadow-sm py-2 db-card border-white" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="bottom" data-bs-title="Total number of unemployed residents">
-                                        <div class="card-body">
-                                            <p class="admin-card-text">Unemployed<i class="float-end fa-solid fa-user-xmark fa-2x" style="color: #414b62;"></i></p>
-                                            <h4 class="card-title fw-bold" style="color:#414b62;">{{$unemployed}} </h4>
-                                            <a href="{{route('unemployed')}}" class="text-secondary">View</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-12 mb-3">
-                                    <div class="card shadow-sm py-2 db-card border-white" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="bottom" data-bs-title="Average income of residents">
-                                        <div class="card-body">
-                                            <p class="admin-card-text">Average Income of Residents<i class="float-end fa-solid fa-money-bills fa-2x" style="color: #414b62;"></i></p>
-                                            <h4 class="card-title fw-bold" style="color:#414b62;">Php {{$average_income}} </h4>
-                                            <a href="" class="invisible text-secondary">View</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    </div>
 
-                        <div class="col-sm-12">
-                            <div class="card border-white shadow-sm db-card" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="bottom" data-bs-title="Bar chart job classifications">
-                                <div class="card-body">
-                                    <div class="container-fluid">
-                                        <figure class="highcharts-figure">
-                                            <div id="job"></div>
-                                            <p class="highcharts-description">
+                    <div class="col-sm-12">
+                        <div class="card border-white shadow-sm db-card" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="bottom" data-bs-title="Bar chart job classifications">
+                            <div class="card-body">
+                                <div class="container-fluid">
+                                    <figure class="highcharts-figure">
+                                        <div id="job"></div>
+                                        <p class="highcharts-description">
 
-                                            </p>
-                                        </figure>
-                                    </div>
+                                        </p>
+                                    </figure>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
     </div>
     <div class="tab-pane fade" id="civilnat-tab-pane" role="tabpanel" aria-labelledby="civilnat-tab" tabindex="0">
 
-        <h5 class="mt-3 mb-4">Civil Status and Nationality</h3>
-            <div id="civil_nationality">
-                <div class="container-fluid">
-                    <div class="row mb-5">
-                        <div class="col-sm-7 mb-3">
-                            <div class="card border-white shadow-sm db-card" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="bottom" data-bs-title="Bar chart civil status of residents">
-                                <div class="card-body">
-                                    <div class="container-fluid">
-                                        <figure class="highcharts-figure">
-                                            <div id="civil_status"></div>
-                                            <p class="highcharts-description">
-                                            </p>
-                                        </figure>
-                                    </div>
+        <h5 class="mt-3 mb-4">Civil Status and Nationality</h5>
+        <div id="civil_nationality">
+            <div class="container-fluid">
+                <div class="row mb-5">
+                    <div class="col-sm-7 mb-3">
+                        <div class="card border-white shadow-sm db-card" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="bottom" data-bs-title="Bar chart civil status of residents">
+                            <div class="card-body">
+                                <div class="container-fluid">
+                                    <figure class="highcharts-figure">
+                                        <div id="civil_status"></div>
+                                        <p class="highcharts-description">
+                                        </p>
+                                    </figure>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-5 mb-3">
-                            <div class="card border-white shadow-sm db-card" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="bottom" data-bs-title="Pie chart nationality of residents">
-                                <div class="card-body">
-                                    <div class="container-fluid">
-                                        <figure class="highcharts-figure">
-                                            <div id="nationality"></div>
-                                            <p class="highcharts-description">
+                    </div>
+                    <div class="col-sm-5 mb-3">
+                        <div class="card border-white shadow-sm db-card" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="bottom" data-bs-title="Pie chart nationality of residents">
+                            <div class="card-body">
+                                <div class="container-fluid">
+                                    <figure class="highcharts-figure">
+                                        <div id="nationality"></div>
+                                        <p class="highcharts-description">
 
-                                            </p>
-                                        </figure>
+                                        </p>
+                                    </figure>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-sm-6 mb-3">
+                                <div class="card shadow-sm py-2 db-card" style="background-color:#08306b" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="bottom" data-bs-title="Total number of Filipino residents">
+                                    <div class="card-body">
+                                        <p class="admin-card-text" style="color: #f6f6f6;">Filipinos<i class="float-end fa-solid fa-id-card fa-2x" style="color: #f6f6f6;"></i></p>
+                                        <h4 class="card-title fw-bold text-white">{{$filipinos}} </h4>
+                                        <a href="{{route('filipinos')}}" class="text-secondary">View</a>
                                     </div>
                                 </div>
                             </div>
-                            <div class="row mt-3">
-                                <div class="col-sm-6 mb-3">
-                                    <div class="card shadow-sm py-2 db-card" style="background-color:#08306b" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="bottom" data-bs-title="Total number of Filipino residents">
-                                        <div class="card-body">
-                                            <p class="admin-card-text" style="color: #f6f6f6;">Filipinos<i class="float-end fa-solid fa-id-card fa-2x" style="color: #f6f6f6;"></i></p>
-                                            <h4 class="card-title fw-bold text-white">{{$filipinos}} </h4>
-                                            <a href="{{route('filipinos')}}" class="text-secondary">View</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6 mb-3">
-                                    <div class="card shadow-sm py-2 db-card" style="background-color:#08519c" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="bottom" data-bs-title="Total number of non-Filipino residents">
-                                        <div class="card-body">
-                                            <p class="admin-card-text" style="color: #f6f6f6;">Non-Filipinos<i class="float-end fa-solid fa-user-xmark fa-2x" style="color: #f6f6f6;"></i></p>
-                                            <h4 class="card-title fw-bold text-white">{{$non_filipinos}} </h4>
-                                            <a href="{{route('nonfil')}}" class="text-secondary">View</a>
-                                        </div>
+                            <div class="col-sm-6 mb-3">
+                                <div class="card shadow-sm py-2 db-card" style="background-color:#08519c" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="bottom" data-bs-title="Total number of non-Filipino residents">
+                                    <div class="card-body">
+                                        <p class="admin-card-text" style="color: #f6f6f6;">Non-Filipinos<i class="float-end fa-solid fa-user-xmark fa-2x" style="color: #f6f6f6;"></i></p>
+                                        <h4 class="card-title fw-bold text-white">{{$non_filipinos}} </h4>
+                                        <a href="{{route('nonfil')}}" class="text-secondary">View</a>
                                     </div>
                                 </div>
                             </div>
@@ -591,31 +543,32 @@
                     </div>
                 </div>
             </div>
+        </div>
     </div>
     <div class="tab-pane fade" id="religion-tab-pane" role="tabpanel" aria-labelledby="religion-tab" tabindex="0">
-        <h5 class="mt-3 mb-4">Religion</h3>
-            <div id="others">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-sm-4 mb-5">
-                            <div class="card border-white shadow-sm db-card" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="bottom" data-bs-title="The religion of the residents">
-                                <div class="card-body">
-                                    <div class="container-fluid">
-                                        <figure class="highcharts-figure">
-                                            <div id="religion"></div>
-                                            <p class="highcharts-description">
+        <h5 class="mt-3 mb-4">Religion</h5>
+        <div id="others">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-4 mb-5">
+                        <div class="card border-white shadow-sm db-card" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="bottom" data-bs-title="The religion of the residents">
+                            <div class="card-body">
+                                <div class="container-fluid">
+                                    <figure class="highcharts-figure">
+                                        <div id="religion"></div>
+                                        <p class="highcharts-description">
 
-                                            </p>
-                                        </figure>
-                                        <a href="{{route('religion')}}" class="text-secondary float-end">View</a>
-                                    </div>
-
+                                        </p>
+                                    </figure>
+                                    <a href="{{route('religion')}}" class="text-secondary float-end">View</a>
                                 </div>
+
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
     </div>
     <div class="tab-pane fade" id="formlog-tab-pane" role="tabpanel" aria-labelledby="formlog-tab" tabindex="0">
         <h5 class="mt-3 mb-4">Forms and Certificates requests</h5>
@@ -655,6 +608,7 @@
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 <script src="https://code.highcharts.com/modules/export-data.js"></script>
 <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+<script src="{{ asset('js/analytics.js') }}"></script>
 
 
 
@@ -662,848 +616,46 @@
 
 {!! $form_chart->renderJs() !!}
 
-<script>
-    Highcharts.chart('household_per_street', {
-        chart: {
-            type: 'column'
-        },
-        title: {
-            text: 'Household density per street',
-            style: {
-                "font-family": 'Roboto, sans-serif',
-                "color": "#353c4e",
-                "font-size": '1.2em'
-            }
-        },
-        subtitle: {
-
-        },
-        xAxis: {
-            categories: <?php echo json_encode($street_names); ?>,
-            crosshair: true,
-            labels: {
-                style: {
-                    "font-family": 'Roboto, sans-serif',
-                    "color": "#353c4e",
-                    "font-size": '1.1em'
-                }
-            },
-        },
-        yAxis: {
-            title: {
-                useHTML: true,
-                text: null
-
-            },
-            labels: {
-                style: {
-                    "font-family": 'Roboto, sans-serif',
-                    "color": "#353c4e",
-                    "font-size": '1.1em'
-                }
-            },
-        },
-        tooltip: {
-            formatter: function() {
-                return this.point.category + '</b><br/>' +
-                    'Number of households: ' + this.point.y;
-            },
-            backgroundColor: '#414b62',
-            style: {
-                color: '#fff',
-                "font-family": 'Roboto, sans-serif',
-            }
-        },
-        plotOptions: {
-            column: {
-                pointWidth: 100,
-                borderRadius: 1,
-                borderWidth: 3,
-                borderColor: '#deebf7',
-                colorByPoint: true,
-            }
-        },
-        series: [{
-            name: "Streets",
-            data: <?php echo json_encode($household_per_street); ?>
-        }],
-        legend: {
-            itemStyle: {
-                "font-family": 'Roboto, sans-serif',
-                "color": "#353c4e",
-                "font-size": '1.2em',
-                "font-weight": "normal"
-            }
-        },
-        colors: ['#08306b',
-            '#08519c',
-            '#2171b5',
-            '#4292c6',
-            '#6baed6',
-            '#9ecae1',
-            '#c6dbef',
-            '#deebf7',
-        ],
-        credits: {
-            enabled: false
-        },
-    });
-</script>
-
 
 <script>
     $(document).ready(function() {
-        Highcharts.chart('families_per_street', {
-            chart: {
-                type: 'column'
-            },
-            title: {
-                text: 'Number of Families per Street',
-                style: {
-                    "font-family": 'Ubuntu, sans-serif',
-                    "color": "#353c4e",
-                    "font-size": '1.2em'
-                }
-            },
-            subtitle: {
-
-            },
-            xAxis: {
-                categories: <?php echo json_encode($street_names); ?>,
-                crosshair: true,
-                labels: {
-                    style: {
-                        "font-family": 'Ubuntu, sans-serif',
-                        "color": "#353c4e",
-                        "font-size": '1.1em'
-                    }
-                },
-            },
-            yAxis: {
-                title: {
-                    useHTML: true,
-                    text: null
-
-                },
-                labels: {
-                    style: {
-                        "font-family": 'Ubuntu, sans-serif',
-                        "color": "#353c4e",
-                        "font-size": '1.1em'
-                    }
-                },
-            },
-            tooltip: {
-                formatter: function() {
-                    return this.point.category + '</b><br/>' +
-                        'Number of families: ' + this.point.y;
-                },
-                backgroundColor: '#414b62',
-                style: {
-                    color: '#fff',
-                    "font-family": 'Ubuntu, sans-serif',
-                }
-            },
-            plotOptions: {
-                column: {
-                    pointWidth: 100,
-                    borderRadius: 1,
-                    borderWidth: 3,
-                    borderColor: '#deebf7',
-                    colorByPoint: true,
-                }
-            },
-            series: [{
-                name: "Families",
-                data: <?php echo json_encode($families_per_street); ?>
-            }],
-            legend: {
-                itemStyle: {
-                    "font-family": 'Ubuntu, sans-serif',
-                    "color": "#353c4e",
-                    "font-size": '1.2em',
-                    "font-weight": "normal"
-                }
-            },
-            colors: ['#08306b',
-                '#08519c',
-                '#2171b5',
-                '#4292c6',
-                '#6baed6',
-                '#9ecae1',
-                '#c6dbef',
-                '#deebf7',
-            ],
-            credits: {
-                enabled: false
-            },
-        });
-    });
-</script>
-
-<script>
-    $(document).ready(function() {
-        Highcharts.chart('residents_per_street', {
-            chart: {
-                type: 'column'
-            },
-            title: {
-                text: 'Number of Residents per Street',
-                style: {
-                    "font-family": 'Ubuntu, sans-serif',
-                    "color": "#353c4e",
-                    "font-size": '1.2em'
-                }
-            },
-            subtitle: {
-
-            },
-            xAxis: {
-                categories: <?php echo json_encode($street_names); ?>,
-                crosshair: true,
-                labels: {
-                    style: {
-                        "font-family": 'Ubuntu, sans-serif',
-                        "color": "#353c4e",
-                        "font-size": '1.1em'
-                    }
-                },
-            },
-            yAxis: {
-                title: {
-                    useHTML: true,
-                    text: null
-
-                },
-                labels: {
-                    style: {
-                        "font-family": 'Ubuntu, sans-serif',
-                        "color": "#353c4e",
-                        "font-size": '1.1em'
-                    }
-                },
-            },
-            tooltip: {
-                formatter: function() {
-                    return this.point.category + '</b><br/>' +
-                        'Number of residents: ' + this.point.y;
-                },
-                backgroundColor: '#414b62',
-                style: {
-                    color: '#fff',
-                    "font-family": 'Ubuntu, sans-serif',
-                }
-            },
-            plotOptions: {
-                column: {
-                    pointWidth: 100,
-                    borderRadius: 1,
-                    borderWidth: 3,
-                    borderColor: '#deebf7',
-                    colorByPoint: true,
-                }
-            },
-            series: [{
-                name: "Families",
-                data: <?php echo json_encode($residents_per_street); ?>
-            }],
-            legend: {
-                itemStyle: {
-                    "font-family": 'Ubuntu, sans-serif',
-                    "color": "#353c4e",
-                    "font-size": '1.2em',
-                    "font-weight": "normal"
-                }
-            },
-            colors: ['#08306b',
-                '#08519c',
-                '#2171b5',
-                '#4292c6',
-                '#6baed6',
-                '#9ecae1',
-                '#c6dbef',
-                '#deebf7',
-            ],
-            credits: {
-                enabled: false
-            },
-        });
-    });
-</script>
-
-<script>
-    var categories = [
-        '0-11 mos', '1-2 yrs', '3-5 yrs', '6-12 yrs', '13-17 yrs', '18-59 yrs', '60 above'
-    ];
-
-    Highcharts.chart('age', {
-        chart: {
-            type: 'bar'
-        },
-        title: {
-            text: 'Age of Residents',
-            style: {
-                "font-family": 'Roboto, sans-serif',
-                "color": "#353c4e",
-                "font-size": '1.2em'
-            }
-        },
-        subtitle: {
-            // text: 'Percentage of resident per age group'
-        },
-        accessibility: {
-            point: {
-                valueDescriptionFormat: '{index}. Age {xDescription}, {value}%.'
-            }
-        },
-        xAxis: [{
-            categories: categories,
-            reversed: false,
-            labels: {
-                step: 1,
-                style: {
-                    "font-family": 'Roboto, sans-serif',
-                    "color": "#353c4e",
-                    "font-size": '1.1em'
-                }
-            },
-
-            accessibility: {
-                description: 'Age (male)'
-            }
-        }, { // mirror axis on right side
-            opposite: true,
-            reversed: false,
-            categories: categories,
-            linkedTo: 0,
-            labels: {
-                step: 1,
-                style: {
-                    "font-family": 'Roboto, sans-serif',
-                    "color": "#353c4e",
-                    "font-size": '1.1em'
-                }
-            },
-            accessibility: {
-                description: 'Age (female)'
-            }
-        }],
-        yAxis: {
-            title: {
-                text: null
-            },
-            labels: {
-                formatter: function() {
-                    return Math.abs(this.value) + '%';
-                },
-                style: {
-                    "font-family": 'Roboto, sans-serif',
-                    "color": "#353c4e",
-                    "font-size": '1.1em'
-                }
-            },
-            accessibility: {
-                description: 'Percentage population',
-                rangeDescription: 'Range: 0 to 5%'
-            }
-        },
-
-        plotOptions: {
-            series: {
-                stacking: 'normal',
-                pointWidth: 30,
-                borderRadius: 1,
-                borderWidth: 2,
-                borderColor: '#deebf7',
-
-            }
-        },
-
-        tooltip: {
-            formatter: function() {
-                return '<b>' + this.series.name + ', age ' + this.point.category + '</b><br/>' +
-                    'Population: ' + Highcharts.numberFormat(Math.abs(this.point.y), 1) + '%';
-            },
-            backgroundColor: '#414b62',
-            style: {
-                color: '#fff',
-                "font-family": 'Roboto, sans-serif',
-            }
-        },
-
-        series: [{
-            name: 'Male',
-            data: <?php echo json_encode($male_age_array); ?>
-
-        }, {
-            name: 'Female',
-            data: <?php echo json_encode($female_age_array); ?>
-        }],
-        legend: {
-            itemStyle: {
-                "font-family": 'Roboto, sans-serif',
-                "color": "#353c4e",
-                "font-size": '1.2em',
-                "font-weight": "normal"
-            }
-        },
-        colors: ['#3d8af7', '#f06e9c'],
-        credits: {
-            enabled: false
-        },
-    });
-</script>
-<script>
-    Highcharts.chart('job', {
-        chart: {
-            type: 'bar'
-        },
-        title: {
-            text: 'Job Classification',
-            style: {
-                "font-family": 'Roboto, sans-serif',
-                "color": "#353c4e",
-                "font-size": '1.2em'
-            }
-        },
-        xAxis: {
-            categories: <?php echo json_encode($array_job_categories); ?>,
-            title: {
-                text: null
-            },
-            labels: {
-                style: {
-                    "font-family": 'Roboto, sans-serif',
-                    "color": "#353c4e",
-                    "font-size": '1.1em'
-                }
-            }
-        },
-        yAxis: {
-            min: 0,
-            title: {
-                text: 'Job Classification',
-                align: 'high'
-            },
-            labels: {
-                overflow: 'justify',
-                style: {
-                    "font-family": 'Roboto, sans-serif',
-                    "color": "#353c4e",
-                    "font-size": '1.1em'
-                }
-            },
-
-        },
-        tooltip: {
-            formatter: function() {
-                return this.point.category + '</b><br/>' +
-                    'Number of workers: ' + this.point.y;
-            },
-            backgroundColor: '#414b62',
-            style: {
-                color: '#fff',
-                "font-family": 'Roboto, sans-serif',
-                "font-size": '1.1em'
-
-            }
-        },
-        plotOptions: {
-            bar: {
-                dataLabels: {
-                    enabled: true,
-                    color: "#414b62",
-                    style: {
-                        "font-family": 'Roboto, sans-serif',
-                        "font-weight": 'normal'
-                    }
-                },
-                colorByPoint: true,
-                pointWidth: 20,
-                borderRadius: 1,
-                borderWidth: 2,
-                borderColor: '#deebf7',
-            }
-
-        },
-        legend: {
-            layout: 'vertical',
-            align: 'right',
-            verticalAlign: 'top',
-            x: -40,
-            y: 80,
-            /* floating: true, */
-            borderWidth: 1,
-            backgroundColor: Highcharts.defaultOptions.legend.backgroundColor || '#FFFFFF',
-            shadow: true
-        },
-        credits: {
-            enabled: false
-        },
-        series: [{
-            name: '',
-            data: <?php echo json_encode($array_job); ?>,
-        }],
-        colors: ['#08306b',
-            '#08519c',
-            '#2171b5',
-            '#4292c6',
-            '#6baed6',
-            '#9ecae1',
-            '#c6dbef',
-            '#deebf7',
-        ]
-
-    });
-</script>
-
-<script>
-    Highcharts.chart('gender', {
-        chart: {
-            plotBackgroundColor: null,
-            plotBorderWidth: null,
-            plotShadow: false,
-            type: 'pie'
-        },
-        title: {
-            text: 'Gender Distribution',
-            style: {
-                "font-family": 'Roboto, sans-serif',
-                "color": "#353c4e",
-                "font-size": '1.2em'
-            }
-        },
-        tooltip: {
-            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>',
-            backgroundColor: '#414b62',
-            style: {
-                color: '#fff',
-                "font-family": 'Roboto, sans-serif',
-            }
-        },
-        accessibility: {
-            point: {
-                valueSuffix: '%'
-            }
-        },
-        plotOptions: {
-            pie: {
-                allowPointSelect: true,
-                cursor: 'pointer',
-                colors: ['#3d8af7', '#f06e9c'],
-                dataLabels: {
-                    enabled: true,
-                    format: '{point.name}<br>{point.percentage:.1f} %',
-                    distance: -50,
-                    style: {
-                        color: '#fff',
-                        "font-family": 'Roboto, sans-serif',
-                        "font-weight": 'normal'
-                    },
-                    filter: {
-                        property: 'percentage',
-                        operator: '>',
-                        value: 4
-                    }
-                }
-            }
-        },
-        series: [{
-            name: 'Share',
-            data: [{
-                    name: 'Male',
-                    y: <?php echo json_encode($male_percentage); ?>
-                },
-                {
-                    name: 'Female',
-                    y: <?php echo json_encode($female_percentage); ?>
-                },
-            ]
-        }],
-        credits: {
-            enabled: false
-        },
-    });
-</script>
-
-<script>
-    // Build the chart
-    Highcharts.chart('resident_incomes', {
-        chart: {
-            plotBackgroundColor: null,
-            plotBorderWidth: null,
-            plotShadow: false,
-            type: 'pie'
-        },
-        title: {
-            text: 'Income Classification of Residents',
-            style: {
-                "font-family": 'Roboto, sans-serif',
-                "color": "#353c4e",
-                "font-size": '1.2em'
-            }
-        },
-        tooltip: {
-            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>',
-            backgroundColor: '#414b62',
-            style: {
-                color: '#fff',
-                "font-family": 'Roboto, sans-serif',
-            }
-        },
-        accessibility: {
-            point: {
-                valueSuffix: '%'
-            }
-        },
-        plotOptions: {
-            pie: {
-                allowPointSelect: true,
-                cursor: 'pointer',
-                colors: ['#08306b',
-                    '#08519c',
-                    '#2171b5',
-                    '#4292c6',
-                    '#6baed6',
-                    '#9ecae1',
-                    '#c6dbef',
-                    '#deebf7'
-                ],
-                dataLabels: {
-                    enabled: true,
-                    format: '<b>{point.name}</b><br>{point.percentage:.1f} %',
-                    distance: -10,
-                    filter: {
-                        property: 'percentage',
-                        operator: '>',
-                        value: 4
-                    }
-                },
-                showInLegend: true
-            }
-        },
-        credits: {
-            enabled: false
-        },
-        series: [{
-            name: 'Income Classification',
-            data: [{
-                name: 'Poor',
-                y: <?php echo json_encode($resident_poor) ?>
-            }, {
-                name: 'Low income',
-                y: <?php echo json_encode($resident_low_income) ?>
-            }, {
-                name: 'Lower middle',
-                y: <?php echo json_encode($resident_lower_middle) ?>
-            }, {
-                name: 'Middle',
-                y: <?php echo json_encode($resident_middle) ?>
-            }, {
-                name: 'Upper middle',
-                y: <?php echo json_encode($resident_upper_middle) ?>
-            }, {
-                name: 'High income',
-                y: <?php echo json_encode($resident_high_income) ?>
-            }, {
-                name: 'Rich',
-                y: <?php echo json_encode($resident_rich) ?>
-            }, ]
-        }]
-
-    });
-</script>
+        var streetNames = <?php echo json_encode($street_names); ?>;
+        var householdsPerStreet = <?php echo json_encode($household_per_street); ?>;
+        var familiesPerStreet = <?php echo json_encode($families_per_street); ?>;
+        var residentsPerStreet = <?php echo json_encode($residents_per_street); ?>;
+        var maleAgeArray = <?php echo json_encode($male_age_array); ?>;
+        var femaleAgeArray = <?php echo json_encode($female_age_array); ?>;
+        var malePercentage = <?php echo json_encode($male_percentage); ?>;
+        var femalePercentage = <?php echo json_encode($female_percentage); ?>;
+        var arrayEducationCategories = <?php echo json_encode($array_education_categories); ?>;
+        var arrayEducation = <?php echo json_encode($array_education); ?>;
+        var residentPoor = <?php echo json_encode($resident_poor) ?>;
+        var residentLow = <?php echo json_encode($resident_low_income) ?>;
+        var residentLowerMiddle = <?php echo json_encode($resident_lower_middle) ?>;
+        var residentMiddle = <?php echo json_encode($resident_middle) ?>;
+        var residentUpperMiddle = <?php echo json_encode($resident_upper_middle) ?>;
+        var residentHigh = <?php echo json_encode($resident_high_income) ?>;
+        var residentRich = <?php echo json_encode($resident_rich) ?>;
+        var householdPoor = <?php echo json_encode($household_poor) ?>;
+        var householdLow = <?php echo json_encode($household_low_income) ?>;
+        var householdLowerMiddle = <?php echo json_encode($household_lower_middle) ?>;
+        var householdMiddle = <?php echo json_encode($household_middle) ?>;
+        var householdUpperMiddle = <?php echo json_encode($household_upper_middle) ?>;
+        var householdHigh = <?php echo json_encode($household_high_income) ?>;
+        var householdRich = <?php echo json_encode($household_rich) ?>;
+        var arrayJobCategories = <?php echo json_encode($array_job_categories); ?>;
+        var arrayJob = <?php echo json_encode($array_job); ?>;
 
 
-<script>
-    // Build the chart
-    Highcharts.chart('household_incomes', {
-        chart: {
-            plotBackgroundColor: null,
-            plotBorderWidth: null,
-            plotShadow: false,
-            type: 'pie'
-        },
-        title: {
-            text: 'Income Classification of Households',
-            style: {
-                "font-family": 'Roboto, sans-serif',
-                "color": "#353c4e",
-                "font-size": '1.2em'
-            }
-        },
-        tooltip: {
-            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>',
-            backgroundColor: '#414b62',
-            style: {
-                color: '#fff',
-                "font-family": 'Roboto, sans-serif',
-            }
-        },
-        accessibility: {
-            point: {
-                valueSuffix: '%'
-            }
-        },
-        plotOptions: {
-            pie: {
-                allowPointSelect: true,
-                cursor: 'pointer',
-                colors: ['#08306b',
-                    '#08519c',
-                    '#2171b5',
-                    '#4292c6',
-                    '#6baed6',
-                    '#9ecae1',
-                    '#c6dbef',
-                    '#deebf7'
-                ],
-                dataLabels: {
-                    enabled: true,
-                    format: '<b>{point.name}</b><br>{point.percentage:.1f} %',
-                    distance: -10,
-                    filter: {
-                        property: 'percentage',
-                        operator: '>',
-                        value: 4
-                    }
-                },
-                showInLegend: true
-            }
-        },
-        credits: {
-            enabled: false
-        },
-        series: [{
-            name: 'Income Classification',
-            data: [{
-                name: 'Poor',
-                y: <?php echo json_encode($household_poor) ?>
-            }, {
-                name: 'Low income',
-                y: <?php echo json_encode($household_low_income) ?>
-            }, {
-                name: 'Lower middle',
-                y: <?php echo json_encode($household_lower_middle) ?>
-            }, {
-                name: 'Middle',
-                y: <?php echo json_encode($household_middle) ?>
-            }, {
-                name: 'Upper middle',
-                y: <?php echo json_encode($household_upper_middle) ?>
-            }, {
-                name: 'High income',
-                y: <?php echo json_encode($household_high_income) ?>
-            }, {
-                name: 'Rich',
-                y: <?php echo json_encode($household_rich) ?>
-            }, ]
-        }]
-
-    });
-</script>
-
-<script>
-    Highcharts.chart('education_attainment', {
-        chart: {
-            type: 'bar'
-        },
-        title: {
-            text: 'Highest Educational Attainment',
-            style: {
-                "font-family": 'Roboto, sans-serif',
-                "color": "#353c4e",
-                "font-size": '1.2em'
-            }
-        },
-        xAxis: {
-            categories: <?php echo json_encode($array_education_categories); ?>,
-            title: {
-                text: null
-            },
-            labels: {
-                style: {
-                    "font-family": 'Roboto, sans-serif',
-                    "color": "#353c4e",
-                    "font-size": '1.1em'
-                }
-            }
-        },
-        yAxis: {
-            min: 0,
-            title: {
-                text: 'Highest Educational Attainment',
-                align: 'high'
-            },
-            labels: {
-                overflow: 'justify',
-                style: {
-                    "font-family": 'Roboto, sans-serif',
-                    "color": "#353c4e",
-                    "font-size": '1.1em'
-                }
-            },
-
-        },
-        tooltip: {
-            formatter: function() {
-                return this.point.category + '</b><br/>' +
-                    'Number of attainees: ' + this.point.y;
-            },
-            backgroundColor: '#414b62',
-            style: {
-                color: '#fff',
-                "font-family": 'Roboto, sans-serif',
-                "font-size": '1.1em'
-
-            }
-        },
-        plotOptions: {
-            bar: {
-                dataLabels: {
-                    enabled: true,
-                    color: "#414b62",
-                    style: {
-                        "font-family": 'Roboto, sans-serif',
-                        "font-weight": 'normal'
-                    }
-                },
-                colorByPoint: true,
-                pointWidth: 20,
-                borderRadius: 1,
-                borderWidth: 2,
-                borderColor: '#deebf7',
-            }
-
-        },
-        legend: {
-            layout: 'vertical',
-            align: 'right',
-            verticalAlign: 'top',
-            x: -40,
-            y: 80,
-            /* floating: true, */
-            borderWidth: 1,
-            backgroundColor: Highcharts.defaultOptions.legend.backgroundColor || '#FFFFFF',
-            shadow: true
-        },
-        credits: {
-            enabled: false
-        },
-        series: [{
-            name: '',
-            data: <?php echo json_encode($array_education); ?>,
-        }],
-        colors: ['#08306b',
-            '#08519c',
-            '#2171b5',
-            '#4292c6',
-            '#6baed6',
-            '#9ecae1',
-            '#c6dbef',
-            '#deebf7',
-        ]
-
+        renderHouseholdsPerStreet(streetNames, householdsPerStreet);
+        renderFamiliesPerStreet(streetNames, familiesPerStreet);
+        renderResidentsPerStreet(streetNames, residentsPerStreet);
+        renderResidentAgePyramid(maleAgeArray, femaleAgeArray);
+        renderGenderPieChart(malePercentage, femalePercentage);
+        renderEducationalAttainment(arrayEducationCategories, arrayEducation);
+        renderIncomeClassResidents(residentPoor, residentLow, residentLowerMiddle, residentMiddle, residentUpperMiddle, residentHigh, residentRich);
+        renderIncomeClassHouseholds(householdPoor, householdLow, householdLowerMiddle, householdMiddle, householdUpperMiddle, householdHigh, householdRich);
+        renderJobClassifications(arrayJobCategories, arrayJob);
     });
 </script>
 
