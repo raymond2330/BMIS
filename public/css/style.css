@@ -1,0 +1,488 @@
+/* typography */
+
+body {
+    /* font-family: 'Lato', sans-serif;
+     */
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+}
+
+.serif {
+    font-family: 'Times New Roman', Times, serif;
+    line-height: 10%;
+}
+.tnr {
+    font-family: 'Times New Roman', Times, serif;
+}
+.p-form {
+    font-family: 'Times New Roman', Times, serif;
+    font-size:18px;
+}
+.indention {
+    padding-left: 2rem;
+}
+.error-form {
+    border: 1px solid red;
+}
+
+
+.paragraph {
+    line-height: 160%;
+    text-align: justify;
+}
+.btn-modern, .bg-modern {
+    background-color: #414b62;
+}
+.btn-edit {
+    background-color: #E0E0E0;
+}
+.btn-create {
+    background-color: #cbc3b1;
+}
+.certificate {
+    font-size:20px;
+    font-family: 'Times New Roman', Times, serif;
+
+}
+
+/* tooltips */
+.custom-tooltip {
+    --bs-tooltip-bg:#414b62;
+    font-family: 'Roboto', sans-serif;    
+    font-weight: 400;
+    letter-spacing: 0.9px;
+  }
+/* typography */
+
+.is-invalid {
+    
+}
+#toTop {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background-color: rgb(163, 163, 163);
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 4px;
+}
+
+#toTop:hover {
+    background-color: #505050;
+}
+
+@media screen and (max-width: 900px) {
+    .serif {
+        font-family: 'Times New Roman', Times, serif;
+        line-height: normal;
+    }
+}
+
+
+/* CAROUSEL */
+.carousel .carousel-item {
+    height: 100%;
+}
+
+.carousel-item img {
+
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+
+}
+
+/* CAROUSEL */
+
+
+.master-head {
+    background-color: #e4e4e4;
+    border-top: 1px solid #afafaf;
+    border-bottom: 1px solid #afafaf;
+    color: #414040;
+    text-transform: uppercase;
+}
+
+.current-page {
+    background-color: #fff;
+    border: 1px solid #fff;
+}
+
+.announcement-title {
+    color: #414040;
+
+}
+
+/* footer */
+.footer {
+    background-color: #ddd;
+    border-top: 1px solid #afafaf;
+}
+
+.footer-title {
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.footer-text,
+.footer a {
+    font-size: 12px;
+}
+
+.remove-bullet {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+/* footer */
+
+
+/* navigation bar */
+
+/* .navbar .navbar-nav .nav-link:hover {
+    background-color: #414b62;
+    color: #cbc3b1;
+}
+
+.navbar .navbar-nav .nav-link {
+    padding: 0.6em;
+    transition: all 0.25s;
+    color: #fff;
+}
+
+.navbar .navbar-brand {
+    padding: 0 0.6em;
+    font-weight: bold;
+} */
+
+/* @media only screen and (min-width: 992px) {
+    .navbar {
+        padding: 0;
+    }
+
+    .navbar .navbar-nav .nav-link {
+        padding: 1em 0.7em;
+    }
+
+    .navbar .navbar-brand {
+        padding: 0 0.8em;
+    }
+} */
+
+/* dropdown */
+ul.dark-dropdown>li>a {
+    color: #f7f7f7;
+}
+
+.dark-dropdown {
+    background-color: #353c4e;
+
+}
+
+.dark-dropdown>li>a:hover {
+    background-color: #414b62;
+    color: #cbc3b1;
+}
+
+/* dropdown */
+
+/* navigation bar */
+
+
+/* admin panel */
+.admin-card-title {
+    font-family: 'Roboto', sans-serif;
+    color: #212121;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.admin-card-text {
+    font-family: 'Roboto', sans-serif;
+    /* font-family: 'Source Sans Pro', sans-serif; */
+    /* font-size: 0.95rem; */
+    color: #353c4e;
+    font-weight: 400;
+    letter-spacing: 0.9px;
+}
+
+.admin-icon {
+
+    background: #353c4e;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #353c4e, #414b62);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #353c4e, #414b62);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.card:hover {
+    /* transform: scale(1.02);
+    transition: all 0.25s; */
+}
+.blur:hover {
+    opacity: 0.5;
+    transition: all 0.25s;
+}
+.overlay_container {
+    position: relative;
+    /* width: 50%; */
+  }
+  
+  .overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #414b62;
+  }
+  
+  .overlay_container:hover .overlay {
+    opacity: 0.85;
+  }
+  
+  .text {
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 0.9px;
+  }
+
+/* admin panel */
+
+
+/* ---------------------------------------------------
+    SIDEBAR STYLE
+----------------------------------------------------- */
+
+/* .wrapper {
+    display: flex;
+    width: 100%;
+}
+
+#sidebar {
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 999;
+    background: #353c4e;
+    color: #f3f3f3;
+    transition: all 0.3s;
+}
+
+#sidebar.active {
+    margin-left: -250px;
+}
+
+#sidebar .sidebar-header {
+    padding: 20px;
+    background: #343a40;
+}
+
+#sidebar ul.components {
+    padding: 20px 0;
+}
+
+#sidebar ul p {
+    padding: 10px;
+}
+
+#sidebar ul li a {
+    padding: 10px;
+    font-size: 1.1em;
+    display: block;
+    color: #f7f7f7;
+}
+
+.active-link {
+    background-color: #414b62;
+    color: #cbc3b1;
+    border-radius: 10px;
+}
+
+#sidebar ul li a:hover {
+    background-color: #414b62;
+    color: #cbc3b1;
+    border-radius: 10px;
+}
+
+
+
+
+/* #sidebar ul li.active>a,
+a[aria-expanded="true"] {
+    color: #fff;
+}
+
+
+a[data-toggle="collapse"] {
+    position: relative;
+} */
+
+.dropdown-toggle::after {
+    /* display: block;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%); */
+}
+
+/* ---------------------------------------------------
+    CONTENT STYLE
+----------------------------------------------------- */
+
+/* #content {
+    width: calc(100% - 250px);
+    padding: 0px;
+    min-height: 100vh;
+    transition: all 0.3s;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+#content.active {
+    width: 100%;
+} */
+
+/* ---------------------------------------------------
+    MEDIAQUERIES
+----------------------------------------------------- */
+/* 
+@media (max-width: 768px) {
+    #sidebar {
+        margin-left: -250px;
+    }
+
+    #sidebar.active {
+        margin-left: 0;
+    }
+
+    #content {
+        width: 100%;
+    }
+
+    #content.active {
+        width: calc(100% - 250px);
+    }
+
+    #sidebarCollapse span {
+        display: none;
+    }
+} */
+
+.db-card {
+    border-radius: 20px;
+
+}
+
+/* server_test */
+
+/* CANVAS */
+canvas {
+    width: 100%;
+    object-fit: contain;
+    max-height: 720px;
+    /* min-height:300px; */
+}
+.table-striped>tbody>tr:nth-child(odd)>td,
+.table-striped>tbody>tr:nth-child(odd)>th {
+	/* background-color: #dfe2ea; */
+}
+th {
+    font-weight: normal;
+}
+#loader {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0,0,0,0.75) url("https://acegif.com/wp-content/uploads/loading-36.gif") no-repeat center center;
+    z-index: 99999;
+}
+
+.highcharts-figure,
+.highcharts-data-table table {
+    min-width: 310px;
+    max-width: 1400px;
+    margin: 1em auto;
+}
+
+.highcharts-data-table table {
+    /* font-family:  'Roboto', sans-serif;    */
+    border-collapse: collapse;
+    border: 1px solid #ebebeb;
+    /* margin: 10px auto; */
+    text-align: center;
+    width: 100%;
+    /* max-width: 500px; */
+}
+
+.highcharts-data-table caption {
+    padding: 1em 0;
+    font-size: 1.2em;
+    color: #555;
+}
+
+.highcharts-data-table th {
+    font-weight: 600;
+    padding: 0.5em;
+}
+
+.highcharts-data-table td,
+.highcharts-data-table th,
+.highcharts-data-table caption {
+    padding: 0.5em;
+}
+
+.highcharts-data-table thead tr,
+.highcharts-data-table tr:nth-child(even) {
+    background: #f8f8f8;
+}
+
+.highcharts-data-table tr:hover {
+    background: #f1f7ff;
+}
+
+.form-control:focus {
+    border-color: #afafaf;
+    /* box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 0, 0, 0.6); */
+  }
+
+.bg-export {
+    background-color: #414b62;
+}
+.bg-export:hover {
+    background-color: #343a40;
+}
+
