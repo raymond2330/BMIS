@@ -22,7 +22,7 @@
             <span class="ms-3 mt-2 text-secondary text-uppercase fw-bold" style="font-size:11px">Local Statistics</span>
             <a class="sidebar-item list-group-item border-bottom-0 border-end-0 d-inline-block text-truncate {{ (request()->is('streets/*')) ? 'active-link' : '' }}" data-bs-parent="#sidebar" href="/streets/index"><i class="ms-2 fa-solid fa-house-user me-2"></i>Household Profiling</a>
             <span class="ms-3 mt-2 text-secondary text-uppercase fw-bold" style="font-size:11px">Tables</span>
-            <a class="sidebar-item list-group-item border-bottom-0 border-end-0 d-inline-block text-truncate {{ (request()->is('households_list')) ? 'active-link' : '' }}" data-bs-parent="#sidebar" href="/households_list"><i class="ms-2 fa-solid fa-house-circle-check me-2"></i>Households</a>
+            <a class="sidebar-item list-group-item border-bottom-0 border-end-0 d-inline-block text-truncate {{ (request()->is('households_list')) || (request()->is('households/*')) ? 'active-link' : '' }}" data-bs-parent="#sidebar" href="/households_list"><i class="ms-2 fa-solid fa-house-circle-check me-2"></i>Households</a>
             <a class="sidebar-item list-group-item border-bottom-0 border-end-0 d-inline-block text-truncate {{ (request()->is('residents/*')) ? 'active-link' : '' }}" data-bs-parent="#sidebar" href="/residents/index"><i class="ms-2 fa-solid fa-users-line me-2"></i>Residents</a>
             @if(Auth::user()->user_type == 0)
             <a class="sidebar-item list-group-item border-bottom-0 border-end-0 d-inline-block text-truncate {{ (request()->is('archive/residents')) ? 'active-link' : '' }}" data-bs-parent="#sidebar" href="/archive/residents"><i class="ms-2 fa-solid fa-box-archive me-2"></i>Archives</a>
@@ -31,7 +31,7 @@
             @if(Auth::user()->user_type == 3 || Auth::user()->user_type == 0)
             <span class="ms-3 mt-2 text-secondary text-uppercase fw-bold" style="font-size:11px">Forms</span>
             <a class="sidebar-item list-group-item border-bottom-0 border-end-0 d-inline-block text-truncate {{ (request()->is('certificates/index')) ? 'active-link' : '' }}" data-bs-parent="#sidebar" href="/certificates/index"><i class="ms-2 fa-solid fa-print me-2"></i>Form Logs</a>
-            <a class="sidebar-item list-group-item border-bottom-0 border-end-0 d-inline-block text-truncate {{ (request()->is('forms')) || (request()->is('forms/*')) ? 'active-link' : '' }}" data-bs-parent="#sidebar" href="/forms"><i class="ms-2 fa-solid fa-file-signature me-2"></i>Generate Forms</a>
+            <a class="sidebar-item list-group-item border-bottom-0 border-end-0 d-inline-block text-truncate {{ (request()->is('forms')) || (request()->is('forms/*')) ? 'active-link' : '' }}" data-bs-parent="#sidebar" href="/forms/forms"><i class="ms-2 fa-solid fa-file-signature me-2"></i>Generate Forms</a>
             @endif
             <span class="ms-3 mt-2 text-secondary text-uppercase fw-bold" style="font-size:11px">Help</span>
             <a class="sidebar-item list-group-item border-bottom-0 border-end-0 d-inline-block text-truncate {{ (request()->is('welcome-user')) ? 'active-link' : '' }}" data-bs-parent="#sidebar" href="/welcome-user"><i class="ms-2 fa-solid fa-clipboard-question me-2"></i>User Manual</a>

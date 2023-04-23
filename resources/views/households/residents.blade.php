@@ -27,10 +27,10 @@
     </div>
     <ul class="nav nav-tabs" id="myTab" role="tablist">
         <li class="nav-item" role="presentation">
-            <button class="nav-link active" id="household-tab" data-bs-toggle="tab" data-bs-target="#household-tab-pane" type="button" role="tab" aria-controls="household-tab-pane" aria-selected="true"><i class="fa-solid fa-house-circle-check fa-2x" style="color:#414b62" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="bottom" data-bs-title="Household Information"></i></button>
+            <button class="nav-link active rounded-3" id="household-tab" data-bs-toggle="tab" data-bs-target="#household-tab-pane" type="button" role="tab" aria-controls="household-tab-pane" aria-selected="true"><i class="fa-solid fa-house-circle-check fa-2x" style="color:#414b62" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="bottom" data-bs-title="Household Information"></i></button>
         </li>
         <li class="nav-item" role="presentation">
-            <button class="nav-link" id="resident-tab" data-bs-toggle="tab" data-bs-target="#resident-tab-pane" type="button" role="tab" aria-controls="resident-tab-pane" aria-selected="false"><i class="fa-solid fa-users-line fa-2x" style="color:#414b62" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="bottom" data-bs-title="Residents that live in this household"></i></button>
+            <button class="nav-link rounded-3" id="resident-tab" data-bs-toggle="tab" data-bs-target="#resident-tab-pane" type="button" role="tab" aria-controls="resident-tab-pane" aria-selected="false"><i class="fa-solid fa-users-line fa-2x" style="color:#414b62" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="bottom" data-bs-title="Residents that live in this household"></i></button>
         </li>
 
     </ul>

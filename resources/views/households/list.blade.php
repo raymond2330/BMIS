@@ -29,7 +29,7 @@
 
     <div class="table-responsive">
 
-        <table class="table table-bordered shadow-sm bg-white caption-top admin-card-text rounded-3 overflow-hidden" id="householdTable">
+        <table class="table shadow-sm bg-white caption-top admin-card-text rounded-3 overflow-hidden" id="householdTable">
             <thead class="bg-modern text-light">
                 <tr>
                     <th></th>

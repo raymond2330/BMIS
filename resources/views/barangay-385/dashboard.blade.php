@@ -18,35 +18,31 @@
     })
 </script>
 @endif
-
-<ul class="nav nav-tabs" id="myTab" role="tablist">
-    <!-- <li class="nav-item" role="presentation">
-        <button class="nav-link active" id="all-tab" data-bs-toggle="tab" data-bs-target="#all-tab-pane" type="button" role="tab" aria-controls="all-tab-pane" aria-selected="true"><i class="fa-solid fa-chart-line fa-2x" style="color:#414b62"></i></button>
-    </li> -->
-    <li class="nav-item" role="presentation">
-        <button class="nav-link active" id="generalinfo-tab" data-bs-toggle="tab" data-bs-target="#generalinfo-tab-pane" type="button" role="tab" aria-controls="generalinfo-tab-pane" aria-selected="false"><i class="fa-solid fa-people-roof fa-2x" style="color:#414b62" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="bottom" data-bs-title="General Household and Resident Information"></i></button>
-    </li>
+<ul class="nav nav-tabs justify-content-center nav-fill" id="myTab" role="tablist">
 
     <li class="nav-item" role="presentation">
-        <button class="nav-link" id="genderage-tab" data-bs-toggle="tab" data-bs-target="#genderage-tab-pane" type="button" role="tab" aria-controls="genderage-tab-pane" aria-selected="false"><i class="fa-solid fa-children fa-2x" style="color:#414b62" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="bottom" data-bs-title="Gender and Age Distribution"></i></button>
+        <button class="nav-link active rounded-3" id="generalinfo-tab" data-bs-toggle="tab" data-bs-target="#generalinfo-tab-pane" type="button" role="tab" aria-controls="generalinfo-tab-pane" aria-selected="false"><i class="fa-solid fa-person-shelter fa-2x" style="color:#414b62" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="bottom" data-bs-title="General Household and Resident Information"></i></button>
     </li>
     <li class="nav-item" role="presentation">
-        <button class="nav-link" id="education-tab" data-bs-toggle="tab" data-bs-target="#education-tab-pane" type="button" role="tab" aria-controls="education-tab-pane" aria-selected="false"><i class="fa-solid fa-book-open-reader fa-2x" style="color:#414b62" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="bottom" data-bs-title="Educational Attainment"></i></button>
+        <button class="nav-link rounded-3" id="genderage-tab" data-bs-toggle="tab" data-bs-target="#genderage-tab-pane" type="button" role="tab" aria-controls="genderage-tab-pane" aria-selected="false"><i class="fa-solid fa-children fa-2x" style="color:#414b62" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="bottom" data-bs-title="Gender and Age Distribution"></i></button>
     </li>
     <li class="nav-item" role="presentation">
-        <button class="nav-link" id="income-tab" data-bs-toggle="tab" data-bs-target="#income-tab-pane" type="button" role="tab" aria-controls="income-tab-pane" aria-selected="false"><i class="fa-solid fa-money-bills fa-2x" style="color:#414b62" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="bottom" data-bs-title="Income Classes and Job Classification"></i></button>
+        <button class="nav-link rounded-3" id="education-tab" data-bs-toggle="tab" data-bs-target="#education-tab-pane" type="button" role="tab" aria-controls="education-tab-pane" aria-selected="false"><i class="fa-solid fa-book-open-reader fa-2x" style="color:#414b62" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="bottom" data-bs-title="Educational Attainment"></i></button>
     </li>
     <li class="nav-item" role="presentation">
-        <button class="nav-link" id="civilnat-tab" data-bs-toggle="tab" data-bs-target="#civilnat-tab-pane" type="button" role="tab" aria-controls="civilnat-tab-pane" aria-selected="false"><i class="fa-solid fa-flag fa-2x" style="color:#414b62" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="bottom" data-bs-title="Civil Status and Nationality"></i></button>
+        <button class="nav-link rounded-3" id="income-tab" data-bs-toggle="tab" data-bs-target="#income-tab-pane" type="button" role="tab" aria-controls="income-tab-pane" aria-selected="false"><i class="fa-solid fa-money-bills fa-2x" style="color:#414b62" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="bottom" data-bs-title="Income Classes and Job Classification"></i></button>
     </li>
     <li class="nav-item" role="presentation">
-        <button class="nav-link" id="religion-tab" data-bs-toggle="tab" data-bs-target="#religion-tab-pane" type="button" role="tab" aria-controls="religion-tab-pane" aria-selected="false"><i class="fa-solid fa-church fa-2x" style="color:#414b62" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="bottom" data-bs-title="Religion"></i></button>
+        <button class="nav-link rounded-3" id="civilnat-tab" data-bs-toggle="tab" data-bs-target="#civilnat-tab-pane" type="button" role="tab" aria-controls="civilnat-tab-pane" aria-selected="false"><i class="fa-solid fa-flag fa-2x" style="color:#414b62" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="bottom" data-bs-title="Civil Status and Nationality"></i></button>
     </li>
     <li class="nav-item" role="presentation">
-        <button class="nav-link" id="others-tab" data-bs-toggle="tab" data-bs-target="#others-tab-pane" type="button" role="tab" aria-controls="others-tab-pane" aria-selected="false"><i class="fa-solid fa-house-circle-check fa-2x" style="color:#414b62" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="bottom" data-bs-title="Other Household Information"></i></button>
+        <button class="nav-link rounded-3" id="religion-tab" data-bs-toggle="tab" data-bs-target="#religion-tab-pane" type="button" role="tab" aria-controls="religion-tab-pane" aria-selected="false"><i class="fa-solid fa-church fa-2x" style="color:#414b62" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="bottom" data-bs-title="Religion"></i></button>
     </li>
     <li class="nav-item" role="presentation">
-        <button class="nav-link" id="formlog-tab" data-bs-toggle="tab" data-bs-target="#formlog-tab-pane" type="button" role="tab" aria-controls="formlog-tab-pane" aria-selected="false"><i class="fa-solid fa-print fa-2x" style="color:#414b62" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="bottom" data-bs-title="Forms and Certificates requests"></i></button>
+        <button class="nav-link rounded-3" id="others-tab" data-bs-toggle="tab" data-bs-target="#others-tab-pane" type="button" role="tab" aria-controls="others-tab-pane" aria-selected="false"><i class="fa-solid fa-house-circle-check fa-2x" style="color:#414b62" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="bottom" data-bs-title="Other Household Information"></i></button>
+    </li>
+    <li class="nav-item" role="presentation">
+        <button class="nav-link rounded-3" id="formlog-tab" data-bs-toggle="tab" data-bs-target="#formlog-tab-pane" type="button" role="tab" aria-controls="formlog-tab-pane" aria-selected="false"><i class="fa-solid fa-print fa-2x" style="color:#414b62" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="bottom" data-bs-title="Forms and Certificates requests"></i></button>
     </li>
     @if(Auth::user()->user_type == 0)
     <li class="nav-item" role="presentation">
@@ -58,9 +54,7 @@
     @endif
 </ul>
 <div class="tab-content" id="myTabContent">
-    <!-- <div class="tab-pane fade show active" id="all-tab-pane" role="tabpanel" aria-labelledby="all-tab" tabindex="0">
 
-    </div> -->
     <div class="tab-pane fade show active" id="generalinfo-tab-pane" role="tabpanel" aria-labelledby="generalinfo-tab" tabindex="0">
         <h5 class="mt-3 mb-4">General Household and Resident Information</h5>
         <div id="general_information">
