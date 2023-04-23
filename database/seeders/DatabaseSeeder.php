@@ -25,7 +25,7 @@ class DatabaseSeeder extends Seeder
             HouseholdSeeder::class,
             ResidentSeeder::class,
         ]);
-        // \App\Models\Certificate::factory(100)->create();
+        \App\Models\Certificate::factory(100)->create();
         // \App\Models\Household::factory(850)->create();
         // \App\Models\Resident::factory(2500)->create();
     }
