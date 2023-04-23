@@ -17,13 +17,13 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call([
-            LinkSeeder::class,
-            VideoSeeder::class,
-            AnnouncementSeeder::class,
-            UserSeeder::class,
-            StreetSeeder::class,
-            HouseholdSeeder::class,
-            ResidentSeeder::class,
+            // LinkSeeder::class,
+            // VideoSeeder::class,
+            // AnnouncementSeeder::class,
+            // UserSeeder::class,
+            // StreetSeeder::class,
+            // HouseholdSeeder::class,
+            // ResidentSeeder::class,
 
         ]);
         // \App\Models\Certificate::factory(100)->create();

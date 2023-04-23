@@ -41,7 +41,7 @@ class AnnouncementTest extends TestCase
     public function test_view_announcement()
     {
         $announcement = Announcement::first();
-        if ($announcement) {  
+        if ($announcement) {
             echo "";
         }
         $this->assertTrue(true);
@@ -54,6 +54,4 @@ class AnnouncementTest extends TestCase
         }
         $this->assertTrue(true);
     }
-
-    
 }
