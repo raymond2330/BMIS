@@ -21,8 +21,8 @@ class ResidentSeeder extends Seeder
     {
         $this->faker = Faker::create();
 
-        foreach (range(1, 2500) as $resident) {
-            $household_id = $this->faker->numberBetween($min = 1, $max = 850);
+        foreach (range(1, 250) as $resident) {
+            $household_id = $this->faker->numberBetween($min = 1, $max = 100);
             $household_head = $this->faker->randomElement(["Yes", "No"]);
             $income = $this->faker->numberBetween($min = 2500, $max = 100000);
             $resident = Resident::create([
