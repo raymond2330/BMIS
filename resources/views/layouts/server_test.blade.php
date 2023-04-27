@@ -64,6 +64,7 @@
         <main class="col">
             <div class="py-1 mb-3 bg-white shadow-sm">
                 <a href="#" data-bs-target="#sidebar" data-bs-toggle="collapse" class="border-none rounded-3 fs-5 p-2 text-decoration-none text-dark"><i class="fa-solid fa-bars" style="margin: 1rem"></i></a>
+
             </div>
             <div class="m-3">
                 @yield('content')

@@ -3,7 +3,11 @@
         <div id="sidebar-nav" class="list-group border-0 rounded-0 text-sm-start min-vh-100">
             <div class="d-grid">
                 <a class=" text-decoration-none text-light fw-bold text-center mt-5 mb-4" href="/welcome-user">System Control Panel</a>
+                <!-- <a class="text-decoration-none text-light text-center mt-5 mb-4" href="/user/profile"> {{auth()->user()->name}}</a> -->
+
             </div>
+            <a class="sidebar-item list-group-item border-bottom-0 border-end-0 d-inline-block text-truncate" data-bs-parent="#sidebar" href="/user/profile"><i class="ms-2 fa-solid fa-user-gear me-2"></i>Profile Settings</a>
+
             <span class="ms-3 mt-2 text-secondary text-uppercase fw-bold" style="font-size:11px">Official Website</span>
             <a class="sidebar-item list-group-item border-bottom-0 border-end-0 d-inline-block text-truncate" data-bs-parent="#sidebar" href="/"><i class="ms-2 fa-solid fa-house me-2"></i>Barangay 385 Home</a>
             @if(Auth::user()->user_type == 0)
