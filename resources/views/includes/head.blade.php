@@ -12,4 +12,5 @@
 <link rel="stylesheet" href="{{asset('/css/style.css')}}">
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="https://kit.fontawesome.com/35e8982b8f.js" crossorigin="anonymous"></script>
+<link rel="icon" type="image/x-icon" href="{{asset('img/logo_385.png')}}">
 
