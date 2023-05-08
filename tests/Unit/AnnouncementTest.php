@@ -82,10 +82,12 @@ class AnnouncementTest extends TestCase
             'user_type' => 1
         ]);
         $this->actingAs($user);
+
         $announcement = Announcement::factory()->create([
             'title' => 'Announcement Title',
             'announcement' => 'Announcement Body',
         ]);
+        
         $response = $this->get("/announcements/destroy/{$announcement->id}");
 
         $this->assertDatabaseHas('announcements', [

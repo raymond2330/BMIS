@@ -56,8 +56,9 @@ class HouseholdController extends Controller
                 $household->postal_code = "1001";
                 $household->city = "Quiapo, Manila";
                 $household->household_size = 0;
-                $household->income = 0;
-                $household->income_classification = "Poor";
+                // $household->income = 0;
+                $household->income = ($request->income == "") ? 0 : $request->income;
+                $household->income_classification = ($request->income_classification == "") ? "Poor" : $request->income_classification;
                 $household->waste_management = $request->waste_management;
                 $household->toilet = $request->toilet;
                 $household->dwelling_type = $request->dwelling_type;

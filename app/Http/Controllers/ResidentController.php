@@ -93,7 +93,6 @@ class ResidentController extends Controller
                 $resident->given_name = $request->given_name;
                 $resident->middle_name = $request->middle_name;
                 $resident->birth_date = $request->birth_date;
-                // dd(Carbon::parse($request->birth_date)->age);
                 $resident->age = Carbon::parse($request->birth_date)->age;
                 $resident->sex = $request->sex;
                 $resident->pregnant = $request->pregnant;
