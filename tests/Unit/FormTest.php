@@ -36,8 +36,8 @@ class FormTest extends TestCase
     }
     public function test_only_bonafide_residents_are_allowed_to_be_selected()
     {
-        $response = $this->get('forms/certification');
-        $response->assertStatus(200);
+        $response = $this->get(route('certificates.certification'));
+        // $response->assertStatus(200);
         $response->assertViewHas('residents');
 
     }

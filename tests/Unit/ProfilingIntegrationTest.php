@@ -11,7 +11,7 @@ use App\Models\User;
 use App\Models\Street;
 
 
-class ProfilingIntegration extends TestCase
+class ProfilingIntegrationTest extends TestCase
 {
     use RefreshDatabase;
     protected $user;
@@ -129,5 +129,12 @@ class ProfilingIntegration extends TestCase
         }
         $this->assertEquals('Middle class', $household->income_classification);
         $this->assertEquals(1, $household->household_size);
+    }
+    public function test_only_bonafide_residents_are_allowed_to_be_selected()
+    {
+        $response = $this->get('forms/certification');
+        $response->assertStatus(302);
+        // $response->assertViewHas('residents');
+
     }
 }

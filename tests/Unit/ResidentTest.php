@@ -35,7 +35,9 @@ class ResidentTest extends TestCase
 
         $this->actingAs($this->user);
     }
-
+    /**
+     * @group resident
+     */
     public function test_resident_profile_updates_household_profile()
     {
         $street = Street::factory()->create([
@@ -54,11 +56,26 @@ class ResidentTest extends TestCase
             'household_size' => 0,
             'number_family' => 0,
             'income' => 25000,
-            'income_classification' => 'Middle class'
+            'income_classification' => 'Lower middle class'
         ];
         $response = $this->post(route('households.store'), $household);
 
-        
+        $this->assertDatabaseHas('households', [
+            'edifice_number' => $household['edifice_number'],
+            'postal_code' => '1001',
+            'city' => 'Quiapo, Manila',
+            'household_size' => 0,
+            'income' => 25000,
+            'income_classification' => 'Lower middle class',
+            'waste_management' => $household['waste_management'],
+            'toilet' => $household['toilet'],
+            'dwelling_type' => $household['dwelling_type'],
+            'ownership' => $household['ownership']
+        ]);
+
+
+
+        $this->assertEquals(1, $street->fresh()->household_count);
 
         $resident = [
             'household_id' => Crypt::encryptString($household['id']),
@@ -89,29 +106,12 @@ class ResidentTest extends TestCase
             'job_title' => 'Others',
             'income' => 25000,
         ];
+
         $response = $this->post(route('residents.store'), $resident);
 
         $household = Household::first();
         $household->refresh();
         $this->assertEquals(50000, $household->income);
-
-        if ($household->income <= 10957) {
-            $income_classification = "Poor";
-        } elseif ($household->income > 10957 && $household->income <= 21194) {
-            $income_classification = "Low income";
-        } elseif ($household->income > 21194 && $household->income <= 43828) {
-            $income_classification = "Lower middle class";
-        } elseif ($household->income > 43828 && $household->income <= 76669) {
-            $income_classification = "Middle class";
-        } elseif ($household->income > 76670 && $household->income <= 131484) {
-            $income_classification = "Upper middle class";
-        } elseif ($household->income > 131484 && $household->income <= 219140) {
-            $income_classification = "High income";
-        } elseif ($household->income > 219140) {
-            $income_classification = "Rich";
-        } else {
-            $income_classification = "No data";
-        }
         $this->assertEquals('Middle class', $household->income_classification);
         $this->assertEquals(1, $household->household_size);
     }
