@@ -10,129 +10,85 @@ use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('isMaster');
+    }
     public function index()
     {
-        if (Auth::id()) {
-            if (Auth::user()->user_type == 0  && Auth::user()->email_verified_at != NULL) {
-                $users = User::all();
-                return view('users.index', compact('users'));
-            } else {
-                return redirect('/welcome-user');
-            }
-        } else {
-            return redirect('/');
-        }
+        $users = User::all();
+        return view('users.index', compact('users'));
     }
     public function create()
     {
-        if (Auth::id()) {
-            if (Auth::user()->user_type == 0  && Auth::user()->email_verified_at != NULL) {
-                return view('users.create');
-            } else {
-                return redirect('/welcome-user');
-            }
-        } else {
-            return redirect('/');
-        }
+        return view('users.create');
     }
     public function store(Request $request)
     {
-        if (Auth::id()) {
-            if (Auth::user()->user_type == 0  && Auth::user()->email_verified_at != NULL) {
-                $request->validate([
-                    'user_type' => 'required|in:0,1,2,3',
-                    'name' => 'required|regex:/^[\pL\s]+$/u|max:255',
-                    'email' => 'email',
-                    'password' => ['required', Password::min(8)
-                        ->letters()
-                        ->mixedCase()
-                        ->numbers()
-                        ->symbols()
-                        ->uncompromised(5)],
-                    'admin_password' => 'required|current_password'
-                ]);
-                $user = new User();
-                $user->user_type = $request->user_type;
-                $user->name = $request->name;
-                $user->email = $request->email;
-                $user->password = bcrypt($request->password);
-                $user->email_verified_at = now();
-                if ($request) {
-                    $user->save();
-                    return back()->with('success', "");
-                }
-            } else {
-                return redirect('/welcome-user');
-            }
-        } else {
-            return redirect('/');
+        $request->validate([
+            'user_type' => 'required|in:0,1,2,3',
+            'name' => 'required|regex:/^[\pL\s]+$/u|max:255',
+            'email' => 'email',
+            'password' => ['required', Password::min(8)
+                ->letters()
+                ->mixedCase()
+                ->numbers()
+                ->symbols()
+                ->uncompromised(5)],
+            'admin_password' => 'required|current_password'
+        ]);
+        $user = new User();
+        $user->user_type = $request->user_type;
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->password = bcrypt($request->password);
+        $user->email_verified_at = now();
+        if ($request) {
+            $user->save();
+            return back()->with('success', "");
         }
     }
     public function edit($id)
     {
-        if (Auth::id()) {
-            if (Auth::user()->user_type == 0  && Auth::user()->email_verified_at != NULL) {
-                $user = User::find($id);
-                return view('users.edit', compact('user'));
-            } else {
-                return redirect('/welcome-user');
-            }
-        } else {
-            return redirect('/');
-        }
+        $user = User::find($id);
+        return view('users.edit', compact('user'));
     }
     public function update(Request $request, $id)
     {
-        if (Auth::id()) {
-            if (Auth::user()->user_type == 0  && Auth::user()->email_verified_at != NULL) {
-                $request->validate([
-                    'user_type' => 'required|in:0,1,2,3',
-                    'name' => 'required|regex:/^[\pL\s]+$/u|max:255',
-                    'email' => 'email',
-                    'password' => ['required', Password::min(8)
-                        ->letters()
-                        ->mixedCase()
-                        ->numbers()
-                        ->symbols()
-                        ->uncompromised(5)],
-                    'admin_password' => 'required|current_password'
-                ]);
-                $user = User::find($id);
-                $user->user_type = $request->user_type;
-                $user->name = $request->name;
-                $user->email = $request->email;
-                $user->password = bcrypt($request->password);
-                $user->email_verified_at = now();
-                if ($request) {
-                    $user->save();
-                    return back()->with('success', "");
-                }
-            } else {
-                return redirect('/welcome-user');
-            }
-        } else {
-            return redirect('/');
+        $request->validate([
+            'user_type' => 'required|in:0,1,2,3',
+            'name' => 'required|regex:/^[\pL\s]+$/u|max:255',
+            'email' => 'email',
+            'password' => ['required', Password::min(8)
+                ->letters()
+                ->mixedCase()
+                ->numbers()
+                ->symbols()
+                ->uncompromised(5)],
+            'admin_password' => 'required|current_password'
+        ]);
+        $user = User::find($id);
+        $user->user_type = $request->user_type;
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->password = bcrypt($request->password);
+        $user->email_verified_at = now();
+        if ($request) {
+            $user->save();
+            return back()->with('success', "");
         }
     }
     public function destroy(Request $request, $id)
     {
-        if (Auth::id()) {
-            if (Auth::user()->user_type == 0  && Auth::user()->email_verified_at != NULL) {
-                $user = User::find($id);
-                $request->validate([
-                    'password' => 'required|current_password'
-                ]);
-                if ($request) {
-                    $user->delete();
-                    return back()->with('deleted', "");
-                } else {
-                    return back()->with('failed', "");
-                }
-            } else {
-                return redirect('/welcome-user');
-            }
+        $user = User::find($id);
+        $request->validate([
+            'password' => 'required|current_password'
+        ]);
+        if ($request) {
+            $user->delete();
+            return back()->with('deleted', "");
         } else {
-            return redirect('/');
+            return back()->with('failed', "");
         }
     }
 }

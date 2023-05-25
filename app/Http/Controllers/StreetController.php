@@ -11,40 +11,28 @@ use Illuminate\Support\Facades\DB;
 
 class StreetController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('isProfiling');
+    }
     public function index()
     {
-        if (Auth::id()) {
-            if ((Auth::user()->user_type == 0 || Auth::user()->user_type == 1) && Auth::user()->email_verified_at != NULL) {
-                $streets = DB::table('streets')->orderBy('street', 'asc')->paginate('12');
-                return view('streets.index', compact('streets'));
-            } else {
-                return redirect('/welcome-user');
-            }
-        } else {
-            return redirect('/');
-        }
+        $streets = DB::table('streets')->orderBy('street', 'asc')->paginate('12');
+        return view('streets.index', compact('streets'));
     }
     public function households($id)
     {
-        if (Auth::id()) {
-            if ((Auth::user()->user_type == 0 || Auth::user()->user_type == 1) && Auth::user()->email_verified_at != NULL) {
-                $search = request()->query('search');
-                if ($search) {
-                    $households = Street::find($id)->households()
-                        ->where('edifice_number', 'LIKE', "%{$search}%")
-                        ->orWhere('id', 'LIKE', "%{$search}%")
-                        ->orderBy('edifice_number', 'asc')
-                        ->paginate(20);
-                } else {
-                    $households = Street::find($id)->households()->orderBy('edifice_number')->paginate(20);
-                }
-                return view('streets.households', compact('households', 'id'));
-            } else {
-                return redirect('/welcome-user');
-            }
+        $search = request()->query('search');
+        if ($search) {
+            $households = Street::find($id)->households()
+                ->where('edifice_number', 'LIKE', "%{$search}%")
+                ->orWhere('id', 'LIKE', "%{$search}%")
+                ->orderBy('edifice_number', 'asc')
+                ->paginate(20);
         } else {
-            return redirect('/');
+            $households = Street::find($id)->households()->orderBy('edifice_number')->paginate(20);
         }
+        return view('streets.households', compact('households', 'id'));
     }
     public static function street_name($id)
     {

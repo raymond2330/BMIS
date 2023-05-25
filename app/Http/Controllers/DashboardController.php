@@ -15,34 +15,30 @@ use Illuminate\Support\Facades\Artisan;
 
 class DashboardController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('isMaster');
+    }
     public function dashboard()
     {
-        if (Auth::id()) {
-            if (Auth::user()->user_type == 0  && Auth::user()->email_verified_at != NULL) {
-                $general = $this->get_general_household_and_resident_information();
-                $genderAge = $this->get_gender_and_age_distribution();
-                $education = $this->get_education();
-                $incomeClassesJob = $this->get_income_and_job_classes();
-                $civilStatusNationality = $this->get_civil_status_and_nationality();
-                $religion = $this->get_religion();
-                $householdInformation = $this->get_household_information();
-                $form_chart = $this->get_form_chart_options();
-                return view('barangay-385.dashboard', compact(
-                    'general',
-                    'genderAge',
-                    'education',
-                    'incomeClassesJob',
-                    'civilStatusNationality',
-                    'religion',
-                    'householdInformation',
-                    'form_chart',
-                ));
-            } else {
-                return redirect('/welcome-user')->with('text', '');
-            }
-        } else {
-            return redirect('/');
-        }
+        $general = $this->get_general_household_and_resident_information();
+        $genderAge = $this->get_gender_and_age_distribution();
+        $education = $this->get_education();
+        $incomeClassesJob = $this->get_income_and_job_classes();
+        $civilStatusNationality = $this->get_civil_status_and_nationality();
+        $religion = $this->get_religion();
+        $householdInformation = $this->get_household_information();
+        $form_chart = $this->get_form_chart_options();
+        return view('barangay-385.dashboard', compact(
+            'general',
+            'genderAge',
+            'education',
+            'incomeClassesJob',
+            'civilStatusNationality',
+            'religion',
+            'householdInformation',
+            'form_chart',
+        ));
     }
     private function familiesPerStreet()
     {
@@ -251,297 +247,144 @@ class DashboardController extends Controller
     }
     public function backup()
     {
-        if (Auth::id()) {
-            if (Auth::user()->user_type == 0 && Auth::user()->email_verified_at != NULL) {
-                set_time_limit(980);
-                ini_set('memory_limit', '256M');
-                Artisan::call('backup:run');
-                return redirect('/dashboard')->with('backup', '');
-            } else {
-                return redirect('/welcome-user');
-            }
-        } else {
-            return redirect('/');
-        }
+        set_time_limit(980);
+        ini_set('memory_limit', '256M');
+        Artisan::call('backup:run');
+        return redirect('/dashboard')->with('backup', '');
     }
     public function bonafide()
     {
-        if (Auth::id()) {
-            if (Auth::user()->user_type == 0 && Auth::user()->email_verified_at != NULL) {
-                $bonafides = Resident::where('bona_fide', 'Yes')
-                    ->with('household')
-                    ->orderBy('household_id', 'asc')
-                    ->get(['household_id', 'id', 'given_name', 'surname', 'sex', 'age', 'updated_at']);
-                return view('residents.bonafide', compact('bonafides'));
-            } else {
-                return redirect('/welcome-user');
-            }
-        } else {
-            return redirect('/');
-        }
+        $bonafides = Resident::where('bona_fide', 'Yes')
+            ->with('household')
+            ->orderBy('household_id', 'asc')
+            ->get(['household_id', 'id', 'given_name', 'surname', 'sex', 'age', 'updated_at']);
+        return view('residents.bonafide', compact('bonafides'));
     }
     public function voters()
     {
-        if (Auth::id()) {
-            if (Auth::user()->user_type == 0 && Auth::user()->email_verified_at != NULL) {
-                $voters = Resident::where('voter', 'Yes')
-                    ->where('age', '>=', 18)
-                    ->with('household')
-                    ->orderBy('household_id', 'asc')
-                    ->get(['household_id', 'id', 'given_name', 'surname', 'sex', 'age', 'updated_at']);
-                return view('residents.voters', compact('voters'));
-            } else {
-                return redirect('/welcome-user');
-            }
-        } else {
-            return redirect('/');
-        }
+        $voters = Resident::where('voter', 'Yes')
+            ->where('age', '>=', 18)
+            ->with('household')
+            ->orderBy('household_id', 'asc')
+            ->get(['household_id', 'id', 'given_name', 'surname', 'sex', 'age', 'updated_at']);
+        return view('residents.voters', compact('voters'));
     }
     public function seniors()
     {
-        if (Auth::id()) {
-            if (Auth::user()->user_type == 0 && Auth::user()->email_verified_at != NULL) {
-                $residents = Resident::where('age', '>=', 60)
-                    ->with('household')
-                    ->orderBy('household_id', 'asc')
-                    ->get(['household_id', 'id', 'given_name', 'surname', 'sex', 'age', 'updated_at']);
-                return view('residents.seniors', compact('residents'));
-            } else {
-                return redirect('/welcome-user');
-            }
-        } else {
-            return redirect('/');
-        }
+        $residents = Resident::where('age', '>=', 60)
+            ->with('household')
+            ->orderBy('household_id', 'asc')
+            ->get(['household_id', 'id', 'given_name', 'surname', 'sex', 'age', 'updated_at']);
+        return view('residents.seniors', compact('residents'));
     }
     public function men()
     {
-        if (Auth::id()) {
-            if (Auth::user()->user_type == 0 && Auth::user()->email_verified_at != NULL) {
-                $men = Resident::where('sex', 'Male')
-                    ->with('household')
-                    ->orderBy('household_id', 'asc')
-                    ->get(['household_id', 'id', 'given_name', 'surname', 'sex', 'age', 'updated_at']);
-                return view('residents.men', compact('men'));
-            } else {
-                return redirect('/welcome-user');
-            }
-        } else {
-            return redirect('/');
-        }
+        $men = Resident::where('sex', 'Male')
+            ->with('household')
+            ->orderBy('household_id', 'asc')
+            ->get(['household_id', 'id', 'given_name', 'surname', 'sex', 'age', 'updated_at']);
+        return view('residents.men', compact('men'));
     }
     public function women()
     {
-        if (Auth::id()) {
-            if (Auth::user()->user_type == 0 && Auth::user()->email_verified_at != NULL) {
-                $women = Resident::where('sex', 'Female')
-                    ->with('household')
-                    ->orderBy('household_id', 'asc')
-                    ->get(['household_id', 'id', 'given_name', 'surname', 'sex', 'age', 'updated_at']);
-                return view('residents.women', compact('women'));
-            } else {
-                return redirect('/welcome-user');
-            }
-        } else {
-            return redirect('/');
-        }
+        $women = Resident::where('sex', 'Female')
+            ->with('household')
+            ->orderBy('household_id', 'asc')
+            ->get(['household_id', 'id', 'given_name', 'surname', 'sex', 'age', 'updated_at']);
+        return view('residents.women', compact('women'));
     }
     public function womenchildren()
     {
-        if (Auth::id()) {
-            if (Auth::user()->user_type == 0 && Auth::user()->email_verified_at != NULL) {
-
-                $womenchildren = Resident::where('sex', 'Female')
-                    ->orWhere('age', '<', 18)
-                    ->with('household')
-                    ->orderBy('household_id', 'asc')
-                    ->get(['household_id', 'id', 'given_name', 'surname', 'sex', 'age', 'updated_at']);
-                return view('residents.womenchildren', compact('womenchildren'));
-            } else {
-                return redirect('/welcome-user');
-            }
-        } else {
-            return redirect('/');
-        }
+        $womenchildren = Resident::where('sex', 'Female')
+            ->orWhere('age', '<', 18)
+            ->with('household')
+            ->orderBy('household_id', 'asc')
+            ->get(['household_id', 'id', 'given_name', 'surname', 'sex', 'age', 'updated_at']);
+        return view('residents.womenchildren', compact('womenchildren'));
     }
     public function pregnant()
     {
-        if (Auth::id()) {
-            if (Auth::user()->user_type == 0 && Auth::user()->email_verified_at != NULL) {
-
-                $pregnants = Resident::where('pregnant', 'Yes')
-                    ->with('household')
-                    ->orderBy('household_id', 'asc')
-                    ->get(['household_id', 'id', 'given_name', 'surname', 'sex', 'age', 'updated_at']);
-                return view('residents.pregnants', compact('pregnants'));
-            } else {
-                return redirect('/welcome-user');
-            }
-        } else {
-            return redirect('/');
-        }
+        $pregnants = Resident::where('pregnant', 'Yes')
+            ->with('household')
+            ->orderBy('household_id', 'asc')
+            ->get(['household_id', 'id', 'given_name', 'surname', 'sex', 'age', 'updated_at']);
+        return view('residents.pregnants', compact('pregnants'));
     }
     public function pwd()
     {
-        if (Auth::id()) {
-            if (Auth::user()->user_type == 0 && Auth::user()->email_verified_at != NULL) {
+        $pwds = Resident::where('pwd', 'Yes')
+            ->with('household')
+            ->orderBy('household_id', 'asc')
+            ->get(['household_id', 'id', 'given_name', 'surname', 'sex', 'disability', 'age', 'updated_at']);
 
-                $pwds = Resident::where('pwd', 'Yes')
-                    ->with('household')
-                    ->orderBy('household_id', 'asc')
-                    ->get(['household_id', 'id', 'given_name', 'surname', 'sex', 'disability', 'age', 'updated_at']);
-
-                return view('residents.pwds', compact('pwds'));
-            } else {
-                return redirect('/welcome-user');
-            }
-        } else {
-            return redirect('/');
-        }
+        return view('residents.pwds', compact('pwds'));
     }
     public function inschools()
     {
-        if (Auth::id()) {
-            if (Auth::user()->user_type == 0 && Auth::user()->email_verified_at != NULL) {
-                $inschools = Resident::where('is_studying', 'Yes')
-                    ->with('household')
-                    ->orderBy('household_id', 'asc')
-                    ->get(['household_id', 'id', 'given_name', 'surname', 'sex', 'age', 'education', 'updated_at']);
+        $inschools = Resident::where('is_studying', 'Yes')
+            ->with('household')
+            ->orderBy('household_id', 'asc')
+            ->get(['household_id', 'id', 'given_name', 'surname', 'sex', 'age', 'education', 'updated_at']);
 
-                return view('residents.inschools', compact('inschools'));
-            } else {
-                return redirect('/welcome-user');
-            }
-        } else {
-            return redirect('/');
-        }
+        return view('residents.inschools', compact('inschools'));
     }
     public function outofschools()
     {
-        if (Auth::id()) {
-            if (Auth::user()->user_type == 0 && Auth::user()->email_verified_at != NULL) {
-                $residents = Resident::where('is_studying', 'No')
-                    ->where('age', '>=', 15)
-                    ->where('age', '<=', 25)
-                    ->where('education', 'High school undergraduate')
-                    ->with('household')
-                    ->orderBy('household_id', 'asc')
-                    ->get(['household_id', 'id', 'given_name', 'surname', 'sex', 'age', 'updated_at']);
-                return view('residents.outofschools', compact('residents'));
-            } else {
-                return redirect('/welcome-user');
-            }
-        } else {
-            return redirect('/');
-        }
+        $residents = Resident::where('is_studying', 'No')
+            ->where('age', '>=', 15)
+            ->where('age', '<=', 25)
+            ->where('education', 'High school undergraduate')
+            ->with('household')
+            ->orderBy('household_id', 'asc')
+            ->get(['household_id', 'id', 'given_name', 'surname', 'sex', 'age', 'updated_at']);
+        return view('residents.outofschools', compact('residents'));
     }
     public function employed()
     {
-        if (Auth::id()) {
-            if (Auth::user()->user_type == 0 && Auth::user()->email_verified_at != NULL) {
-                $search = request()->query('search');
-
-                $residents = Resident::where('is_employed', 'Yes')
-                    ->with('household')
-                    ->orderBy('household_id', 'asc')
-                    ->get(['household_id', 'id', 'given_name', 'surname', 'sex', 'age', 'job_title', 'updated_at']);
-
-
-                return view('residents.employed', compact('residents'));
-            } else {
-                return redirect('/welcome-user');
-            }
-        } else {
-            return redirect('/');
-        }
+        $search = request()->query('search');
+        $residents = Resident::where('is_employed', 'Yes')
+            ->with('household')
+            ->orderBy('household_id', 'asc')
+            ->get(['household_id', 'id', 'given_name', 'surname', 'sex', 'age', 'job_title', 'updated_at']);
+        return view('residents.employed', compact('residents'));
     }
     public function unemployed()
     {
-        if (Auth::id()) {
-            if (Auth::user()->user_type == 0 && Auth::user()->email_verified_at != NULL) {
-                $search = request()->query('search');
+        $search = request()->query('search');
+        $residents = Resident::where('is_employed', 'No')
+            ->where('age', '>=', 18)
+            ->where('education', 'Post secondary graduate')
+            ->with('household')
+            ->orderBy('household_id', 'asc')
+            ->get(['household_id', 'id', 'given_name', 'surname', 'sex', 'age', 'updated_at']);
 
-                $residents = Resident::where('is_employed', 'No')
-                    ->where('age', '>=', 18)
-                    ->where('education', 'Post secondary graduate')
-                    ->with('household')
-                    ->orderBy('household_id', 'asc')
-                    ->get(['household_id', 'id', 'given_name', 'surname', 'sex', 'age', 'updated_at']);
-
-                return view('residents.unemployed', compact('residents'));
-            } else {
-                return redirect('/welcome-user');
-            }
-        } else {
-            return redirect('/');
-        }
+        return view('residents.unemployed', compact('residents'));
     }
     public function filipinos()
     {
-        if (Auth::id()) {
-            if (Auth::user()->user_type == 0 && Auth::user()->email_verified_at != NULL) {
+        $residents = Resident::where('nationality', 'Filipino')
+            ->with('household')
+            ->orderBy('household_id', 'asc')
+            ->get(['household_id', 'id', 'given_name', 'surname', 'sex', 'age', 'civil_status', 'updated_at']);
 
-                $residents = Resident::where('nationality', 'Filipino')
-                    ->with('household')
-                    ->orderBy('household_id', 'asc')
-                    ->get(['household_id', 'id', 'given_name', 'surname', 'sex', 'age', 'civil_status', 'updated_at']);
-
-                return view('residents.filipinos', compact('residents'));
-            } else {
-                return redirect('/welcome-user');
-            }
-        } else {
-            return redirect('/');
-        }
+        return view('residents.filipinos', compact('residents'));
     }
     public function nonfil()
     {
-        if (Auth::id()) {
-            if (Auth::user()->user_type == 0 && Auth::user()->email_verified_at != NULL) {
-                $search = request()->query('search');
+        $search = request()->query('search');
+        $residents = Resident::where('nationality', '!=', 'Filipino')
+            ->with('household')
+            ->orderBy('household_id', 'asc')
+            ->get(['household_id', 'id', 'given_name', 'surname', 'sex', 'age', 'nationality', 'civil_status', 'updated_at']);
 
-                $residents = Resident::where('nationality', '!=', 'Filipino')
-                    ->with('household')
-                    ->orderBy('household_id', 'asc')
-                    ->get(['household_id', 'id', 'given_name', 'surname', 'sex', 'age', 'nationality', 'civil_status', 'updated_at']);
-
-                return view('residents.nonfil', compact('residents'));
-            } else {
-                return redirect('/welcome-user');
-            }
-        } else {
-            return redirect('/');
-        }
+        return view('residents.nonfil', compact('residents'));
     }
     public function religion()
     {
-        if (Auth::id()) {
-            if (Auth::user()->user_type == 0 && Auth::user()->email_verified_at != NULL) {
-                $search = request()->query('search');
-
-                $residents = Resident::with('household')
-                    ->orderBy('household_id', 'asc')
-                    ->get(['household_id', 'id', 'given_name', 'surname', 'sex', 'age', 'religion', 'updated_at']);
-                return view('residents.religion', compact('residents'));
-            } else {
-                return redirect('/welcome-user');
-            }
-        } else {
-            return redirect('/');
-        }
+        $search = request()->query('search');
+        $residents = Resident::with('household')
+            ->orderBy('household_id', 'asc')
+            ->get(['household_id', 'id', 'given_name', 'surname', 'sex', 'age', 'religion', 'updated_at']);
+        return view('residents.religion', compact('residents'));
     }
 }
-
-
-
-
-
-
-// if (Auth::id()) {
-//     if (Auth::user()->user_type == 0 && Auth::user()->email_verified_at != NULL) {
-        
-//     } else {
-//         return redirect('login');
-//     }
-// } else {
-//     return redirect('login');
-// }
