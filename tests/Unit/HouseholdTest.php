@@ -67,7 +67,7 @@ class HouseholdTest extends TestCase
             'household_size' => 0,
             'income' => 0,
             'income_classification' => 'Poor',
-            'waste_management' => $household['waste_management'],
+            'waste_management' => $household['waste_management'],   
             'toilet' => $household['toilet'],
             'dwelling_type' => $household['dwelling_type'],
             'ownership' => $household['ownership']

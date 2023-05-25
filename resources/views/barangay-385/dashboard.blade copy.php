@@ -64,7 +64,7 @@
                         <div class="card shadow-sm py-2 db-card border-white" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="bottom" data-bs-title="Total number of households">
                             <div class="card-body">
                                 <p class="admin-card-text">Households<i class="float-end fa-solid fa-house fa-2x" style="color: #414b62;"></i></p>
-                                <h4 class="card-title fw-bold" style="color: #414b62;">{{$general['household_count']}}</h4>
+                                <h4 class="card-title fw-bold" style="color: #414b62;">{{$household_count}}</h4>
                                 <a href="{{route('households.list')}}" class="text-secondary">View</a>
                             </div>
                         </div>
@@ -73,7 +73,7 @@
                         <div class="card shadow-sm py-2 db-card" id="tooltip-2" style="background-color:#414b62" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="bottom" data-bs-title="Total number of population in the barangay">
                             <div class="card-body">
                                 <p class="admin-card-text" style="color: #f6f6f6;">Total Population<i class="float-end fa-solid fa-users-line fa-2x" style="color: #f6f6f6;"></i></p>
-                                <h4 class="card-title fw-bold text-white">{{$general['resident_count']}} </h4>
+                                <h4 class="card-title fw-bold text-white">{{$resident_count}} </h4>
                                 <a href="{{route('residents.index')}}" class="text-secondary">View</a>
                             </div>
                         </div>
@@ -82,7 +82,7 @@
                         <div class="card shadow-sm py-2 db-card border-white" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="bottom" data-bs-title="Total number of families. It is indicative of how many are the household heads">
                             <div class="card-body">
                                 <p class="admin-card-text">Families <i class="float-end fa-solid fa-people-group fa-2x" style="color: #414b62;"></i></p>
-                                <h4 class="card-title fw-bold" style="color:#414b62;">{{$general['families']}} </h4>
+                                <h4 class="card-title fw-bold" style="color:#414b62;">{{$families}} </h4>
                                 <a href="#" class="invisible">View</a>
                             </div>
                         </div>
@@ -91,7 +91,7 @@
                         <div class="card shadow-sm py-2 db-card border-white" id="tooltip-2" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="bottom" data-bs-title="Number of residents that are born in this barangay">
                             <div class="card-body">
                                 <p class="admin-card-text">Bona fide residents<i class="float-end fa-solid fa-user-check fa-2x" style="color: #414b62;"></i></p>
-                                <h4 class="card-title fw-bold" style="color: #414b62;">{{$general['bona_fide']}} </h4>
+                                <h4 class="card-title fw-bold" style="color: #414b62;">{{$bona_fide}} </h4>
                                 <a href="{{route('bonafide')}}" class="text-secondary">View</a>
                             </div>
                         </div>
@@ -101,7 +101,7 @@
                         <div class="card shadow-sm py-2 db-card border-white" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="bottom" data-bs-title="Total number of registered voters">
                             <div class="card-body">
                                 <p class="admin-card-text">Registered Voters <i class="float-end fa-solid fa-check-to-slot fa-2x" style="color: #414b62;"></i></p>
-                                <h4 class="card-title fw-bold" style="color:#414b62;">{{$general['voters']}} </h4>
+                                <h4 class="card-title fw-bold" style="color:#414b62;">{{$voters}} </h4>
                                 <a href="{{route('voters')}}" class="text-secondary">View</a>
                             </div>
                         </div>
@@ -110,7 +110,7 @@
                         <div class="card shadow-sm py-2 db-card border-white" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="bottom" data-bs-title="Total number of person aged 60 and above">
                             <div class="card-body">
                                 <p class="admin-card-text">Senior Citizens <i class="float-end fa-solid fa-person-cane fa-2x" style="color: #414b62;"></i></p>
-                                <h4 class="card-title fw-bold" style="color:#414b62;">{{$general['senior_citizens']}} </h4>
+                                <h4 class="card-title fw-bold" style="color:#414b62;">{{$senior_citizens}} </h4>
                                 <a href="{{route('seniors')}}" class="text-secondary">View</a>
                             </div>
                         </div>
@@ -248,7 +248,7 @@
                                     <div class="card shadow-sm db-card border-white" style="background-color:#f06e9c" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="bottom" data-bs-title="Percentage of women">
                                         <div class="card-body">
                                             <p class="admin-card-text" style="color: #f6f6f6;">Women<i class="float-end fa-solid fa-person-dress fa-2x" style="color: #f6f6f6;"></i></p>
-                                            <h4 class="card-title fw-bold text-white">{{$genderAge['females']}}</h4>
+                                            <h4 class="card-title fw-bold text-white">{{$females}}</h4>
                                             <a href="{{route('women')}}" class="text-light">View</a>
                                         </div>
                                     </div>
@@ -257,7 +257,7 @@
                                     <div class="card shadow-sm db-card border-white" style="background-color:#3d8af7" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="bottom" data-bs-title="Percentage of men">
                                         <div class="card-body">
                                             <p class="admin-card-text" style="color: #f6f6f6;">Men<i class="float-end fa-solid fa-person fa-2x" style="color: #f6f6f6;"></i></p>
-                                            <h4 class="card-title fw-bold text-white">{{$genderAge['males']}}</h4>
+                                            <h4 class="card-title fw-bold text-white">{{$males}}</h4>
                                             <a href="{{route('men')}}" class="text-light">View</a>
                                         </div>
                                     </div>
@@ -270,7 +270,7 @@
                                     <div class="card shadow-sm db-card border-white" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="bottom" data-bs-title="Total number of women and children">
                                         <div class="card-body">
                                             <p class="admin-card-text">Women & Children<i class="float-end fa-solid fa-person-breastfeeding fa-2x" style="color: #414b62;"></i></p>
-                                            <h4 class="card-title fw-bold" style="color: #414b62;">{{$genderAge['women_children']}}</h4>
+                                            <h4 class="card-title fw-bold" style="color: #414b62;">{{$women_children}}</h4>
                                             <a href="{{route('womenchildren')}}" class="text-secondary">View</a>
                                         </div>
                                     </div>
@@ -279,7 +279,7 @@
                                     <div class="card shadow-sm db-card border-white" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="bottom" data-bs-title="Total number of pregnant women">
                                         <div class="card-body">
                                             <p class="admin-card-text">Pregnant Women<i class="float-end fa-solid fa-person-pregnant fa-2x" style="color: #414b62;"></i></p>
-                                            <h4 class="card-title fw-bold" style="color: #414b62;">{{$genderAge['pregnants']}}</h4>
+                                            <h4 class="card-title fw-bold" style="color: #414b62;">{{$pregnants}}</h4>
                                             <a href="{{route('pregnants')}}" class="text-secondary">View</a>
                                         </div>
                                     </div>
@@ -288,7 +288,7 @@
                                     <div class="card shadow-sm db-card border-white" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="bottom" data-bs-title="Total number of people with disability">
                                         <div class="card-body">
                                             <p class="admin-card-text">PWDs<i class="float-end fa-solid fa-wheelchair fa-2x" style="color: #414b62;"></i></p>
-                                            <h4 class="card-title fw-bold" style="color: #414b62;">{{$genderAge['pwds']}}</h4>
+                                            <h4 class="card-title fw-bold" style="color: #414b62;">{{$pwds}}</h4>
                                             <a href="{{route('pwds')}}" class="text-secondary">View</a>
                                         </div>
                                     </div>
@@ -313,33 +313,33 @@
                                                 <tbody>
                                                     <tr class="">
                                                         <td scope="row">Less than 1 year</td>
-                                                        <td>{{$genderAge['infants_male']}} </td>
-                                                        <td>{{$genderAge['infants_female']}}</td>
-                                                        <td>{{$genderAge['infants_female']}}%</td>
+                                                        <td>{{$infants_male}} </td>
+                                                        <td>{{$infants_female}}</td>
+                                                        <td>{{$infants_percentage}}%</td>
                                                     </tr>
                                                     <tr class="">
                                                         <td scope="row">1 to 17 years</td>
-                                                        <td>{{$genderAge['children_male']}}</td>
-                                                        <td>{{$genderAge['children_female']}}</td>
-                                                        <td>{{$genderAge['children_percentage']}}%</td>
+                                                        <td>{{$children_male}}</td>
+                                                        <td>{{$children_female}}</td>
+                                                        <td>{{$children_percentage}}%</td>
                                                     </tr>
                                                     <tr class="">
                                                         <td scope="row">18 to 59 years</td>
-                                                        <td>{{$genderAge['adults_male']}}</td>
-                                                        <td>{{$genderAge['adults_female']}}</td>
-                                                        <td>{{$genderAge['adults_percentage']}}%</td>
+                                                        <td>{{$adults_male}}</td>
+                                                        <td>{{$adults_female}}</td>
+                                                        <td>{{$adults_percentage}}%</td>
                                                     </tr>
                                                     <tr class="">
                                                         <td scope="row">60+ years</td>
-                                                        <td>{{$genderAge['elderly_male']}}</td>
-                                                        <td>{{$genderAge['elderly_female']}}</td>
-                                                        <td>{{$genderAge['elderly_percentage']}}%</td>
+                                                        <td>{{$elderly_male}}</td>
+                                                        <td>{{$elderly_female}}</td>
+                                                        <td>{{$elderly_percentage}}%</td>
                                                     </tr>
                                                     <tr>
                                                         <td scope="row">Total</td>
-                                                        <td>{{$genderAge['infants_male'] + $genderAge['children_male'] + $genderAge['adults_male'] + $genderAge['elderly_male']}} </td>
-                                                        <td>{{$genderAge['infants_female'] + $genderAge['children_female'] + $genderAge['adults_female'] + $genderAge['elderly_female']}} </td>
-                                                        <td>{{$genderAge['infants_percentage'] + $genderAge['children_percentage'] + $genderAge['adults_percentage'] + $genderAge['elderly_percentage']}}%</td>
+                                                        <td>{{$infants_male + $children_male + $adults_male + $elderly_male}} </td>
+                                                        <td>{{$infants_female + $children_female + $adults_female + $elderly_female}} </td>
+                                                        <td>{{$infants_percentage + $children_percentage + $adults_percentage + $elderly_percentage}}%</td>
                                                     </tr>
                                                 </tbody>
                                             </table>
@@ -377,7 +377,7 @@
                                 <div class="card shadow-sm db-card border-white " style="background-color:#414b62" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="bottom" data-bs-title="Total number of residents that are currently studying">
                                     <div class="card-body">
                                         <p class="admin-card-text" style="color: #f6f6f6;">In school<i class="float-end fa-solid fa-chalkboard-user fa-2x" style="color: #f6f6f6;"></i></p>
-                                        <h4 class="card-title fw-bold text-white">{{$education['in_school']}}</h4>
+                                        <h4 class="card-title fw-bold text-white">{{$in_school}}</h4>
                                         <a href="{{route('inschools')}}" class="text-secondary">View</a>
                                     </div>
                                 </div>
@@ -386,7 +386,7 @@
                                 <div class="card shadow-sm db-card border-white" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="bottom" data-bs-title="Total number of out of school youths">
                                     <div class="card-body">
                                         <p class="admin-card-text">Out of school youths<i class="float-end fa-solid fa-school-circle-xmark fa-2x" style="color: #414b62;"></i></p>
-                                        <h4 class="card-title fw-bold" style="color: #414b62;">{{$education['outofschoolyouth']}}</h4>
+                                        <h4 class="card-title fw-bold" style="color: #414b62;">{{$outofschoolyouth}}</h4>
                                         <a href="{{route('outofschools')}}" class="text-secondary">View</a>
                                     </div>
                                 </div>
@@ -438,7 +438,7 @@
                                 <div class="card shadow-sm py-2 db-card" style="background-color:#414b62" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="bottom" data-bs-title="Total number of employed residents">
                                     <div class="card-body">
                                         <p class="admin-card-text" style="color: #f6f6f6;">Employed<i class="float-end fa-solid fa-id-card fa-2x" style="color: #f6f6f6;"></i></p>
-                                        <h4 class="card-title fw-bold text-white">{{$incomeClassesJob['employed']}} </h4>
+                                        <h4 class="card-title fw-bold text-white">{{$employed}} </h4>
                                         <a href="{{route('employed')}}" class="text-secondary">View</a>
                                     </div>
                                 </div>
@@ -447,7 +447,7 @@
                                 <div class="card shadow-sm py-2 db-card border-white" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="bottom" data-bs-title="Total number of unemployed residents">
                                     <div class="card-body">
                                         <p class="admin-card-text">Unemployed<i class="float-end fa-solid fa-user-xmark fa-2x" style="color: #414b62;"></i></p>
-                                        <h4 class="card-title fw-bold" style="color:#414b62;">{{$incomeClassesJob['unemployed']}} </h4>
+                                        <h4 class="card-title fw-bold" style="color:#414b62;">{{$unemployed}} </h4>
                                         <a href="{{route('unemployed')}}" class="text-secondary">View</a>
                                     </div>
                                 </div>
@@ -456,7 +456,7 @@
                                 <div class="card shadow-sm py-2 db-card border-white" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="bottom" data-bs-title="Average income of residents">
                                     <div class="card-body">
                                         <p class="admin-card-text">Average Income of Residents<i class="float-end fa-solid fa-money-bills fa-2x" style="color: #414b62;"></i></p>
-                                        <h4 class="card-title fw-bold" style="color:#414b62;">Php {{$incomeClassesJob['average_income']}} </h4>
+                                        <h4 class="card-title fw-bold" style="color:#414b62;">Php {{$average_income}} </h4>
                                         <a href="" class="invisible text-secondary">View</a>
                                     </div>
                                 </div>
@@ -519,7 +519,7 @@
                                 <div class="card shadow-sm py-2 db-card" style="background-color:#08306b" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="bottom" data-bs-title="Total number of Filipino residents">
                                     <div class="card-body">
                                         <p class="admin-card-text" style="color: #f6f6f6;">Filipinos<i class="float-end fa-solid fa-id-card fa-2x" style="color: #f6f6f6;"></i></p>
-                                        <h4 class="card-title fw-bold text-white">{{$civilStatusNationality['filipinos']}} </h4>
+                                        <h4 class="card-title fw-bold text-white">{{$filipinos}} </h4>
                                         <a href="{{route('filipinos')}}" class="text-secondary">View</a>
                                     </div>
                                 </div>
@@ -528,7 +528,7 @@
                                 <div class="card shadow-sm py-2 db-card" style="background-color:#08519c" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="bottom" data-bs-title="Total number of non-Filipino residents">
                                     <div class="card-body">
                                         <p class="admin-card-text" style="color: #f6f6f6;">Non-Filipinos<i class="float-end fa-solid fa-user-xmark fa-2x" style="color: #f6f6f6;"></i></p>
-                                        <h4 class="card-title fw-bold text-white">{{$civilStatusNationality['non_filipinos']}} </h4>
+                                        <h4 class="card-title fw-bold text-white">{{$non_filipinos}} </h4>
                                         <a href="{{route('nonfil')}}" class="text-secondary">View</a>
                                     </div>
                                 </div>
@@ -606,56 +606,56 @@
 {!! $form_chart->renderJs() !!}
 <script>
     $(document).ready(function() {
-        let streetNames = <?php echo json_encode($general['street_names']); ?>;
-        let householdsPerStreet = <?php echo json_encode($general['household_per_street']); ?>;
-        let familiesPerStreet = <?php echo json_encode($general['families_per_street']); ?>;
-        let residentsPerStreet = <?php echo json_encode($general['residents_per_street']); ?>;
-        let maleAgeArray = <?php echo json_encode($genderAge['male_age_array']); ?>;
-        let femaleAgeArray = <?php echo json_encode($genderAge['female_age_array']); ?>;
-        let malePercentage = <?php echo json_encode($genderAge['male_percentage']); ?>;
-        let femalePercentage = <?php echo json_encode($genderAge['female_percentage']); ?>;
-        let arrayEducationCategories = <?php echo json_encode($education['array_education_categories']); ?>;
-        let arrayEducation = <?php echo json_encode($education['array_education']); ?>;
-        let residentPoor = <?php echo json_encode($incomeClassesJob['resident_poor']) ?>;
-        let residentLow = <?php echo json_encode($incomeClassesJob['resident_low_income']) ?>;
-        let residentLowerMiddle = <?php echo json_encode($incomeClassesJob['resident_lower_middle']) ?>;
-        let residentMiddle = <?php echo json_encode($incomeClassesJob['resident_middle']) ?>;
-        let residentUpperMiddle = <?php echo json_encode($incomeClassesJob['resident_upper_middle']) ?>;
-        let residentHigh = <?php echo json_encode($incomeClassesJob['resident_high_income']) ?>;
-        let residentRich = <?php echo json_encode($incomeClassesJob['resident_rich']) ?>;
-        let householdPoor = <?php echo json_encode($incomeClassesJob['household_poor']) ?>;
-        let householdLow = <?php echo json_encode($incomeClassesJob['household_low_income']) ?>;
-        let householdLowerMiddle = <?php echo json_encode($incomeClassesJob['household_lower_middle']) ?>;
-        let householdMiddle = <?php echo json_encode($incomeClassesJob['household_middle']) ?>;
-        let householdUpperMiddle = <?php echo json_encode($incomeClassesJob['household_upper_middle']) ?>;
-        let householdHigh = <?php echo json_encode($incomeClassesJob['household_high_income']) ?>;
-        let householdRich = <?php echo json_encode($incomeClassesJob['household_rich']) ?>;
-        let arrayJobCategories = <?php echo json_encode($incomeClassesJob['array_job_categories']); ?>;
-        let arrayJob = <?php echo json_encode($incomeClassesJob['array_job']); ?>;
-        let civilStatusLabels = <?php echo json_encode($civilStatusNationality['civil_status_labels']); ?>;
-        let civilStatus = <?php echo json_encode($civilStatusNationality['civil_status']); ?>;
-        let filipinosPercentage = <?php echo json_encode($civilStatusNationality['filipinos_percentage']); ?>;
-        let nonfilipinosPercentage = <?php echo json_encode($civilStatusNationality['non_filipinos_percentage']); ?>;
-        let catholicPercentage = <?php echo json_encode($religion['catholic_percentage']); ?>;
-        let incPercentage = <?php echo json_encode($religion['inc_percentage']); ?>;
-        let othersPercentage = <?php echo json_encode($religion['other_religion_percentage']); ?>;
-        let composting = <?php echo json_encode($householdInformation['composting']); ?>;
-        let incineration = <?php echo json_encode($householdInformation['incineration']); ?>;
-        let recycled = <?php echo json_encode($householdInformation['recycled']); ?>;
-        let waste_others = <?php echo json_encode($householdInformation['waste_others']); ?>;
-        let pail = <?php echo json_encode($householdInformation['pail']); ?>;
-        let flushed = <?php echo json_encode($householdInformation['flushed']); ?>;
-        let toilet_others = <?php echo json_encode($householdInformation['toilet_others']); ?>;
-        let no_toilet = <?php echo json_encode($householdInformation['no_toilet']); ?>;
-        let concrete = <?php echo json_encode($householdInformation['concrete']); ?>;
-        let semiconcrete = <?php echo json_encode($householdInformation['semiconcrete']); ?>;
-        let logwood = <?php echo json_encode($householdInformation['logwood']); ?>;
-        let dwelling_others = <?php echo json_encode($householdInformation['dwelling_others']); ?>;
-        let rented = <?php echo json_encode($householdInformation['rented']); ?>;
-        let owned = <?php echo json_encode($householdInformation['owned']); ?>;
-        let sharedowner = <?php echo json_encode($householdInformation['sharedowner']); ?>;
-        let sharedrenter = <?php echo json_encode($householdInformation['sharedrenter']); ?>;
-        let informalsettler = <?php echo json_encode($householdInformation['informalsettler']); ?>;
+        let streetNames = <?php echo json_encode($street_names); ?>;
+        let householdsPerStreet = <?php echo json_encode($household_per_street); ?>;
+        let familiesPerStreet = <?php echo json_encode($families_per_street); ?>;
+        let residentsPerStreet = <?php echo json_encode($residents_per_street); ?>;
+        let maleAgeArray = <?php echo json_encode($male_age_array); ?>;
+        let femaleAgeArray = <?php echo json_encode($female_age_array); ?>;
+        let malePercentage = <?php echo json_encode($male_percentage); ?>;
+        let femalePercentage = <?php echo json_encode($female_percentage); ?>;
+        let arrayEducationCategories = <?php echo json_encode($array_education_categories); ?>;
+        let arrayEducation = <?php echo json_encode($array_education); ?>;
+        let residentPoor = <?php echo json_encode($resident_poor) ?>;
+        let residentLow = <?php echo json_encode($resident_low_income) ?>;
+        let residentLowerMiddle = <?php echo json_encode($resident_lower_middle) ?>;
+        let residentMiddle = <?php echo json_encode($resident_middle) ?>;
+        let residentUpperMiddle = <?php echo json_encode($resident_upper_middle) ?>;
+        let residentHigh = <?php echo json_encode($resident_high_income) ?>;
+        let residentRich = <?php echo json_encode($resident_rich) ?>;
+        let householdPoor = <?php echo json_encode($household_poor) ?>;
+        let householdLow = <?php echo json_encode($household_low_income) ?>;
+        let householdLowerMiddle = <?php echo json_encode($household_lower_middle) ?>;
+        let householdMiddle = <?php echo json_encode($household_middle) ?>;
+        let householdUpperMiddle = <?php echo json_encode($household_upper_middle) ?>;
+        let householdHigh = <?php echo json_encode($household_high_income) ?>;
+        let householdRich = <?php echo json_encode($household_rich) ?>;
+        let arrayJobCategories = <?php echo json_encode($array_job_categories); ?>;
+        let arrayJob = <?php echo json_encode($array_job); ?>;
+        let civilStatusLabels = <?php echo json_encode($civil_status_labels); ?>;
+        let civilStatus = <?php echo json_encode($civil_status); ?>;
+        let filipinosPercentage = <?php echo json_encode($filipinos_percentage); ?>;
+        let nonfilipinosPercentage = <?php echo json_encode($non_filipinos_percentage); ?>;
+        let catholicPercentage = <?php echo json_encode($catholic_percentage); ?>;
+        let incPercentage = <?php echo json_encode($inc_percentage); ?>;
+        let othersPercentage = <?php echo json_encode($other_religion_percentage); ?>;
+        let composting = <?php echo json_encode($composting); ?>;
+        let incineration = <?php echo json_encode($incineration); ?>;
+        let recycled = <?php echo json_encode($recycled); ?>;
+        let waste_others = <?php echo json_encode($waste_others); ?>;
+        let pail = <?php echo json_encode($pail); ?>;
+        let flushed = <?php echo json_encode($flushed); ?>;
+        let toilet_others = <?php echo json_encode($toilet_others); ?>;
+        let no_toilet = <?php echo json_encode($no_toilet); ?>;
+        let concrete = <?php echo json_encode($concrete); ?>;
+        let semiconcrete = <?php echo json_encode($semiconcrete); ?>;
+        let logwood = <?php echo json_encode($logwood); ?>;
+        let dwelling_others = <?php echo json_encode($dwelling_others); ?>;
+        let rented = <?php echo json_encode($rented); ?>;
+        let owned = <?php echo json_encode($owned); ?>;
+        let sharedowner = <?php echo json_encode($sharedowner); ?>;
+        let sharedrenter = <?php echo json_encode($sharedrenter); ?>;
+        let informalsettler = <?php echo json_encode($informalsettler); ?>;
         renderHouseholdsPerStreet(streetNames, householdsPerStreet);
         renderFamiliesPerStreet(streetNames, familiesPerStreet);
         renderResidentsPerStreet(streetNames, residentsPerStreet);
