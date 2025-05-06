@@ -5,10 +5,7 @@
     "keywords": ["framework", "laravel"],
     "license": "MIT",
     "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/fmarccus/laravel-charts"
-        }
+       
     ],
     "require": {
         "php": "^8.0.2",
