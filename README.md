@@ -1,3 +1,88 @@
+# Barangay Management Information System (BMIS)
+
+A web-based application for efficient management of barangay records, residents, certificates, and administrative tasks.
+
+## Features
+
+- Resident and household management
+- Certificate generation and export
+- Announcements and dashboard
+- User authentication and roles
+- Data export (Excel, PDF)
+- Activity logs and audit trail
+- Responsive UI
+
+## Prerequisites
+
+- PHP >= 8.1
+- Composer
+- Node.js & NPM
+- XAMPP
+
+## Installation
+
+1. **Clone the repository:**
+
+   ```sh
+   git clone https://github.com/raymond2330/BMIS.git
+   cd BMIS
+   ```
+
+2. **Install PHP dependencies:**
+
+   ```sh
+   composer update
+   ```
+
+3. **Install JavaScript dependencies:**
+
+   ```sh
+   npm install
+   ```
+
+4. **Copy and configure environment file:**
+    <br /> Edit .env to set your database and mail settings
+
+   ```sh
+   cp .env.example .env
+   ```
+
+5. **Generate application key:**
+
+   ```sh
+   php artisan key:generate
+   ```
+
+6. **Run migrations and seeders:**
+
+   ```sh
+   php artisan migrate --seed
+   ```
+
+7. **Build frontend assets:**
+
+   ```sh
+   npm run dev
+   ```
+
+8. **Start the local server:**
+
+   ```sh
+   php artisan serve
+   ```
+
+## Usage
+
+- Access the app at `http://localhost:8000` after running `php artisan serve`.
+- Login with the default admin credentials (see seeders or ask your admin).
+- Manage residents, households, certificates, and more via the dashboard.
+
+## Development
+
+- **Hot reload assets:** `npm run dev`
+- **Run tests:** `php artisan test`
+- **Code style:** Follow PSR-12 for PHP and standard JS/TS linting.
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">
