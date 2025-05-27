@@ -17,7 +17,7 @@
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle text-light" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            About Barangay 385
+                            About Barangay 386
                         </a>
                         <ul class="dropdown-menu rounded-0 dark-dropdown shadow-lg" style="font-size: 14px;">
                             <li><a class="dropdown-item" href="/about/history">History</a></li>
@@ -80,7 +80,7 @@
                 <div class="p-2">
                     <h5 class="serif mt-4 fw-bold">Republic of the Philippines</h5>
                     <hr>
-                    <h4 class="serif fw-bold">Barangay 385, Manila</h4>
+                    <h4 class="serif fw-bold">Barangay 386, Manila</h4>
                 </div>
                 <div class="ms-auto p-2">
                     <h4><span style="color:gray; float:right"><iframe src="https://www.zeitverschiebung.net/clock-widget-iframe-v2?language=en&size=small&timezone=Asia%2FManila" width="100%" height="100" frameborder="" seamless></iframe></h4>

@@ -16,7 +16,7 @@
     <div class="d-flex mb-3">
         <div class="me-auto p-2">
             <h4 class="">
-                ({{$streets->count()}}) Streets in Barangay 385
+                ({{$streets->count()}}) Streets in Barangay 386
             </h4>
         </div>
 

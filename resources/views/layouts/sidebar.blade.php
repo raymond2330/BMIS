@@ -9,7 +9,7 @@
             <a class="sidebar-item list-group-item border-bottom-0 border-end-0 d-inline-block text-truncate" data-bs-parent="#sidebar" href="/user/profile"><i class="ms-2 fa-solid fa-user-gear me-2"></i>Profile Settings</a>
 
             <span class="ms-3 mt-2 text-secondary text-uppercase fw-bold" style="font-size:11px">Official Website</span>
-            <a class="sidebar-item list-group-item border-bottom-0 border-end-0 d-inline-block text-truncate" data-bs-parent="#sidebar" href="/"><i class="ms-2 fa-solid fa-house me-2"></i>Barangay 385 Home</a>
+            <a class="sidebar-item list-group-item border-bottom-0 border-end-0 d-inline-block text-truncate" data-bs-parent="#sidebar" href="/"><i class="ms-2 fa-solid fa-house me-2"></i>Barangay 386 Home</a>
             @if(Auth::user()->user_type == 0)
             <span class="ms-3 mt-2 text-secondary text-uppercase fw-bold" style="font-size:11px">User Management</span>
             <a class="sidebar-item list-group-item border-bottom-0 border-end-0 d-inline-block text-truncate {{ (request()->is('users/*')) ? 'active-link' : '' }}" data-bs-parent="#sidebar" href="/users/index"><i class="ms-2 fa-solid fa-users me-2"></i>System Users</a>

@@ -31,7 +31,7 @@
                                     </option>
                                     @endforeach
                                 </datalist> has no known regular source of income and has in many occasion, approached this Barangay for financial assistance. Given this situation,
-                                his/her family can be considered as one of the many indigent individuals/families in Barangay 385.</span>
+                                his/her family can be considered as one of the many indigent individuals/families in Barangay 386.</span>
 
                             <p class="p-form">&emsp; &emsp; This certification is being issued for whatever legal purpose it may serve.</p>
 

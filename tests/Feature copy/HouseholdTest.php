@@ -37,7 +37,7 @@ class HouseholdTest extends TestCase
             'postal_code' => '1001',
             'city' => 'Quiapo, Manila',
             'country' => 'Philippines',
-            'full_address' => '123 Arlegui Street, Barangay 385, 1001 Quiapo, Manila, Philippines',
+            'full_address' => '123 Arlegui Street, Barangay 386, 1001 Quiapo, Manila, Philippines',
             'household_size' => 0,
             'income' => 0,
             'income_range' => 'Less than or equal to P10,957',
@@ -84,7 +84,7 @@ class HouseholdTest extends TestCase
         $this->faker = Faker::create();
         $response = DB::table('residents')->updateOrInsert([
             'full_address' =>  $this->faker->randomElement([
-                "123 Arlegui Street, Barangay 385, 1001 Quiapo, Manila, Philippines",                
+                "123 Arlegui Street, Barangay 386, 1001 Quiapo, Manila, Philippines",                
             ]),
             'surname' => $this->faker->lastName($gender = null),
             'given_name' => $this->faker->firstName($gender = null),

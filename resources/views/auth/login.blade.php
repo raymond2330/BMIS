@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Barangay 385 Information Management System - Login</title>
+    <title>Barangay 386 Information Management System - Login</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     @include('includes.head')
 
@@ -22,7 +22,7 @@
                             <center>
                                 <img src="{{asset('img/logo_385.png')}}" width="200" alt="">
                             </center>
-                            <h4 class="admin-card-text text-uppercase text-center fw-bold mt-3">Barangay 385 Information Management System</h4>
+                            <h4 class="admin-card-text text-uppercase text-center fw-bold mt-3">Barangay 386 Information Management System</h4>
                             <p class="admin-card-text mt-5 text-center">Please login your administrative account to access the system</p>
                             <form action="{{ route('login') }}" method="POST">
                                 @csrf

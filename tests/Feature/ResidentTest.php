@@ -37,7 +37,7 @@ class ResidentTest extends TestCase
         $this->faker = Faker::create();
         $response = DB::table('residents')->updateOrInsert([
             'full_address' =>  $this->faker->randomElement([
-                "123 Arlegui Street, Barangay 385, 1001 Quiapo, Manila, Philippines",
+                "123 Arlegui Street, Barangay 386, 1001 Quiapo, Manila, Philippines",
             ]),
             'surname' => $this->faker->lastName($gender = null),
             'given_name' => $this->faker->firstName($gender = null),

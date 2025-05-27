@@ -26,7 +26,7 @@
         <p class="mt-4">
             <span class="indention p-form">To the best knowledge of this Barangay, <span class="fw-bold text-uppercase"><em> {{ ($resident->sex === "Male")? "Mr." : "Ms." }} {{$resident->given_name}} {{$resident->surname}}</em></span> 
             with a postal address at {{$resident->household->edifice_number}} {{$resident->household->street->street}} St., Quiapo, Manila, has no known regular source of income and has in many occasion, approached this Barangay for financial assistance. Given this situation,
-                his/her family can be considered as one of the many indigent individuals/families in Barangay 385.</span>
+                his/her family can be considered as one of the many indigent individuals/families in Barangay 386.</span>
         </p>
         <p class="mt-4">
             <span class="indention p-form">This certification is being issued for whatever legal purpose it may serve.</span>

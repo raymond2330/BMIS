@@ -13,7 +13,7 @@
             </div>
             <div class="mt-3">
                 <ul class="list-group list-group-flush ">
-                    <li class="list-group-item "><a class="text-decoration-none text-dark" href="/barangay-385"><i class="fa-solid fa-house me-2"></i>Barangay 385 Home</a></li>
+                    <li class="list-group-item "><a class="text-decoration-none text-dark" href="/barangay-386"><i class="fa-solid fa-house me-2"></i>Barangay 386 Home</a></li>
                     <span class="mt-2 text-secondary text-uppercase fw-bold" style="font-size:14px">Edit the Barangay Home page</span>
                     <li class="list-group-item "><a class="text-decoration-none text-dark" href="/links/index"><i class="fa-solid fa-link me-2"></i>Quick Links</a></li>
                     <li class="list-group-item "><a class="text-decoration-none text-dark" href="/videos/index"><i class="fa-brands fa-youtube me-2"></i>Featured Videos</a></li>

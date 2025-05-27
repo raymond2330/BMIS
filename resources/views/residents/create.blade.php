@@ -46,19 +46,19 @@
                                     <p>Consent Form</p>
                                     <em>
                                         <p>
-                                            The undersigned has given permission to the Barangay 385 staff, in charge of the household profiling; lawful use, and disclosure of my personal data which may include my name, contact information, age, birth date, civil status, and other personal details.
+                                            The undersigned has given permission to the Barangay 386 staff, in charge of the household profiling; lawful use, and disclosure of my personal data which may include my name, contact information, age, birth date, civil status, and other personal details.
                                         </p>
                                         <p>
-                                            I understand that Barangay 385 and related offices are authorized to process my personal and sensitive personal information without need of my consent pursuant to the relevant portions of Sections 4, 12, and 13 of the Philippine Data Privacy Act.
+                                            I understand that Barangay 386 and related offices are authorized to process my personal and sensitive personal information without need of my consent pursuant to the relevant portions of Sections 4, 12, and 13 of the Philippine Data Privacy Act.
                                         </p>
                                         <p>
-                                            I, further attest, that the Barangay 385 and other appropriate offices in the said Barangay are authorized to provide the above information to legitimate institutions/officers requesting specific information in relation to planning, impact monitoring, and projects or programs implementation within the Barangay.
+                                            I, further attest, that the Barangay 386 and other appropriate offices in the said Barangay are authorized to provide the above information to legitimate institutions/officers requesting specific information in relation to planning, impact monitoring, and projects or programs implementation within the Barangay.
                                         </p>
                                         <p>
-                                            I consent to the processing of my personal and sensitive personal information contained in this form submitted for the purpose of enabling the Barangay 385 including all the relevant system and offices to verify my identity, prevent fraud, determine whether I am qualified to avail such program or other similar financial or other assistance, and conduct research using non-identifiable information in order to study the effectiveness of the Information Management System and assess how to improve it.
+                                            I consent to the processing of my personal and sensitive personal information contained in this form submitted for the purpose of enabling the Barangay 386 including all the relevant system and offices to verify my identity, prevent fraud, determine whether I am qualified to avail such program or other similar financial or other assistance, and conduct research using non-identifiable information in order to study the effectiveness of the Information Management System and assess how to improve it.
                                         </p>
                                         <p>
-                                            This consent enables the Barangay 385 to comply with R.A. 10173, otherwise known as the Data Privacy Act of 2012
+                                            This consent enables the Barangay 386 to comply with R.A. 10173, otherwise known as the Data Privacy Act of 2012
                                         </p>
                                     </em>
                                 </div>
@@ -425,7 +425,6 @@
                                             {{$message}}
                                         </small>
                                         @enderror
-                                    </div>
                                 </div>
                                 <button type="submit" class="btn btn-dark btn-modern float-end shadow-none" onclick="return confirm('Save this resident data?')">Save</button>
                             </div>

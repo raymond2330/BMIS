@@ -25,7 +25,7 @@
     <div class="container mt-5" style="text-align:justify">
         <p class="mt-4">
             <span class="indention p-form">To the best knowledge of this Barangay, <span class="fw-bold text-uppercase"><em>{{substr($resident, 0, strpos($resident, "at"))}}</em></span> has no known regular source of income and has in many occasion, approached this Barangay for financial assistance. Given this situation,
-                his/her family can be considered as one of the many indigent individuals/families in Barangay 385.</span>
+                his/her family can be considered as one of the many indigent individuals/families in Barangay 386.</span>
         </p>
         <p class="mt-4">
             <span class="indention p-form">This certification is being issued for whatever legal purpose it may serve.</span>

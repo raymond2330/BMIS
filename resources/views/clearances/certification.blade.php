@@ -62,7 +62,7 @@
                             <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
                                 <div class="accordion-body">
                                     <ol class="admin-card-text">
-                                        <li>Bona fide residents of Barangay 385 can be selected in the dropdown menu. His/her address is also generated accordingly.</li>
+                                        <li>Bona fide residents of Barangay 386 can be selected in the dropdown menu. His/her address is also generated accordingly.</li>
                                         <!-- <li>Under specific circumstances, the resident's name and address can also be typewritten.</li>
                                         <li>Follow the format <em>Mr/Ms. Firstname Surname at House number, Street, Quiapo, Manila</em>
                                             <br>

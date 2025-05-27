@@ -1,5 +1,5 @@
 @extends('layouts.server_test')
-@section('title', 'Barangay 385 System Dashboard')
+@section('title', 'Barangay 386 System Dashboard')
 @section('content')
 
 @if(session()->has('unauthorized'))

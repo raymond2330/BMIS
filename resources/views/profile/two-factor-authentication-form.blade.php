@@ -22,7 +22,7 @@
 
         <div class="mt-3 max-w-xl text-sm text-gray-600">
             <p>
-                {{ __('When two factor authentication is enabled, you will be prompted for a secure, random token during authentication. You may retrieve this token from the designated master\'s account in Barangay 385 office.') }}
+                {{ __('When two factor authentication is enabled, you will be prompted for a secure, random token during authentication. You may retrieve this token from the designated master\'s account in Barangay 386 office.') }}
             </p>
         </div>
 
