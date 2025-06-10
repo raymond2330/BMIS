@@ -35,33 +35,24 @@ class StreetController extends Controller
         return view('streets.households', compact('households', 'id'));
     }
     public static function street_name($id)
-    {
+    {   // "Arlegui", "Balmes", "J. Nepomuceno", "P. Casal", "Pelaez"
         $street_name = "";
         switch ($id) {
             case 1:
                 $street_name = "Arlegui";
                 break;
             case 2:
-                $street_name = "Duque de Alba";
+                $street_name = "Balmes";
                 break;
             case 3:
-                $street_name = "Castillejos";
+                $street_name = "J. Nepomuceno";
                 break;
             case 4:
-                $street_name = "Vergara";
-                break;
-            case 5:
-                $street_name = "Fraternal";
-                break;
-            case 6:
                 $street_name = "P. Casal";
                 break;
-            case 7:
-                $street_name = "Pax";
-                break;
-            case 8:
-                $street_name = "Farnecio";
-                break;
+            // case 5:
+            //     $street_name = "Pelaez";
+            //     break;
             default:
                 $street_name = "Error";
         }

@@ -20,7 +20,7 @@ class HouseholdSeeder extends Seeder
         $this->faker = Faker::create();
 
         foreach (range(1, 850) as $household) {
-            $street_id = $this->faker->numberBetween($min = 1, $max = 8);
+            $street_id = $this->faker->numberBetween($min = 1, $max = 4);
             $household = Household::create([
                 'street_id' =>  $street_id,
                 'edifice_number' =>  $this->faker->numberBetween($min = 0, $max = 900),

@@ -20,7 +20,7 @@ class StreetSeeder extends Seeder
     public function run()
     {
         $this->faker = Faker::create();
-        $streets = array("Arlegui", "Duque de Alba", "Castillejos", "Vergara", "Fraternal", "P. Casal", "Pax", "Farnecio");        
+        $streets = array("Arlegui", "Balmes", "J. Nepomuceno", "P. Casal");        
         foreach($streets as $street) {
             Street::create([
                 'street' => $street,

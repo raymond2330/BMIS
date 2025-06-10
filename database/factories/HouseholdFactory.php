@@ -18,7 +18,7 @@ class HouseholdFactory extends Factory
     public function definition()
     {
         return [
-            'street_id' =>  $this->faker->numberBetween($min = 1, $max = 8),
+            'street_id' =>  $this->faker->numberBetween($min = 1, $max = 4),
             'edifice_number' =>  $this->faker->numberBetween($min = 0, $max = 900),
             'postal_code' => '1001',
             'city' => 'Quiapo, Manila',
