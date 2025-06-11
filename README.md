@@ -77,10 +77,51 @@ A web-based application for efficient management of barangay records, residents,
 - Login with the default admin credentials (see seeders or ask your admin).
 - Manage residents, households, certificates, and more via the dashboard.
 
+------------------------
+# For Docker Set-up
+
+## Quick Start
+
+1. **Start Docker containers:**
+
+   ```powershell
+   docker-compose up -d
+   ```
+
+2. **Install dependencies (if not already):**
+
+   ```powershell
+   docker exec -it laravel_app composer install
+   docker exec -it laravel_app npm install
+   ```
+
+3. **Generate application key:**
+
+   ```powershell
+   docker exec -it laravel_app php artisan key:generate
+   ```
+
+4. **Run migrations and seeders:**
+
+   ```powershell
+   docker exec -it laravel_app php artisan migrate --seed
+   ```
+
+5. **Build frontend assets:**
+
+   ```powershell
+   docker exec -it laravel_app npm run dev
+   ```
+
+6. **Access the app:**
+
+   - Open your browser and go to `http://localhost:8080`
+   - Login with the default admin credentials (see seeders or ask your admin)
+
 ## Development
 
-- **Hot reload assets:** `npm run dev`
-- **Run tests:** `php artisan test`
+- **Hot reload assets:** `docker exec -it laravel_app npm run dev`
+- **Run tests:** `docker exec -it laravel_app php artisan test`
 - **Code style:** Follow PSR-12 for PHP and standard JS/TS linting.
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
